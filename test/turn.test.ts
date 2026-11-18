@@ -34,3 +34,15 @@ test('quotes an entire source paragraph including its withdrawal condition',()=>
  const row={source_url:'https://bank.test/accounts/cedar',title:'Cedar Saver',content:'Five withdrawals are permitted. Exceeding that limit reduces interest for the period.'};
  assert.ok(sourceExcerpts('Cedar Saver: do withdrawals affect interest?', [row])?.answer.includes(row.content));
 });
+
+test('a follow-up excerpt uses only the latest requested fact', () => {
+ const evidence=[{source_url:'https://bank.test/cedar',title:'Cedar Deposit',content:'Currencies: GBP and EUR'}];
+ assert.equal(sourceExcerpts('Currencies and maturity of Cedar Deposit?',evidence,'When does it mature?'),null);
+ assert.ok(sourceExcerpts('Currencies of Cedar Deposit?',evidence,'Which currencies does it support?'));
+});
+
+
+test('ranks a payout paragraph for a question about when a payment is made',()=>{
+ const row={source_url:'https://bank.test/cedar',title:'Cedar Deposit',content:'Profit payout upon maturity'};
+ assert.match(sourceExcerpts('Cedar Deposit', [row], 'When is its profit paid?')?.answer||'',/Profit payout upon maturity/);
+});

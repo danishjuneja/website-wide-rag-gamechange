@@ -29,6 +29,13 @@ try {
   for(const c of result.chunks)rows.push({source_url:u.toString(),title:removeEmails(doc.title),section:c.heading.join(' > '),content:c.text});
  }
 } catch(error) {if((error as NodeJS.ErrnoException).code!=='ENOENT') throw error;}
+const registerPath=process.argv.find(arg=>arg.startsWith('--inventory='))?.slice('--inventory='.length);
+if(registerPath){
+ const reviewed=JSON.parse(await readFile(registerPath,'utf8')) as {products:{source_url:string}[]};
+ const sources=new Set(rows.map(row=>row.source_url));
+ const missing=[...new Set(reviewed.products.map(p=>p.source_url).filter(url=>!sources.has(url)))];
+ if(missing.length)throw new Error('Missing reviewed sources before embedding:\n'+missing.join('\n'));
+}
 const batchSize=96;
 const model=process.env.COHERE_EMBED_MODEL||'embed-english-v3.0';
 const batchId=batchDigest(model,rows);
@@ -39,8 +46,9 @@ if(!process.argv.includes(`--batch-id=${batchId}`))throw new Error('Batch hash d
 if (!rows.length) throw new Error('No eligible chunks to index');
 if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY || !process.env.COHERE_API_KEY) throw new Error('Missing server credentials');
 const db=createClient(process.env.SUPABASE_URL,process.env.SUPABASE_SERVICE_ROLE_KEY,{auth:{persistSession:false}});
+const progressPath=process.argv.includes('--versioned-progress')?`data/index-progress-${batchId}.json`:'data/index-progress.json';
 let progress:{batchId:string;version:string;offset:number}|undefined;
-try{progress=JSON.parse(await readFile('data/index-progress.json','utf8'))}catch(error){if((error as NodeJS.ErrnoException).code!=='ENOENT')throw error}
+try{progress=JSON.parse(await readFile(progressPath,'utf8'))}catch(error){if((error as NodeJS.ErrnoException).code!=='ENOENT')throw error}
 if(progress && progress.batchId!==batchId)throw new Error('A different staged batch has progress; preserve or clear its progress file before starting another');
 let version=progress?.version||randomUUID();
 if (process.argv.includes('--extend-preview')) {
@@ -63,7 +71,7 @@ for(let i=progress?.offset||0;i<rows.length;i+=batchSize) {
   const vectors=await embed(batch.map(x=>`${x.title}\n${x.section}\n${x.content}`),'search_document');
   const {error}=await db.from('rag_chunks').insert(batch.map((row,j)=>({...row,version_id:version,embedding:vectors[j],embedding_model:process.env.COHERE_EMBED_MODEL||'embed-english-v3.0',source_hash:createHash('sha256').update(row.content).digest('hex')})));
   if(error) throw new Error(`Index upload failed after ${i} chunks: ${error.message}`);
-  await writeFile('data/index-progress.json',JSON.stringify({batchId,version,offset:i+batch.length},null,2));
+  await writeFile(progressPath,JSON.stringify({batchId,version,offset:i+batch.length},null,2));
   console.log(`Staged ${Math.min(i+batchSize,rows.length)}/${rows.length}`);
   if(i+batchSize<rows.length)await new Promise(resolve=>setTimeout(resolve,Math.max(0,13000-(Date.now()-started))));
 }

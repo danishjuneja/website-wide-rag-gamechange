@@ -17,9 +17,9 @@ const robotsUrl = `${base}/robots.txt`;
 const robotsResponse = await fetch(robotsUrl, { headers: { 'user-agent': userAgent }, signal: AbortSignal.timeout(15000) });
 if (!robotsResponse.ok) throw new Error(`Could not read robots.txt: ${robotsResponse.status}`);
 const robots = robotsParser(robotsUrl, await robotsResponse.text());
-const isProductOrSupport = (url: string) => /^\/en\/(cards|accounts|loans|business-banking|corporate-and-institutional-banking|priority-banking|private-banking|islamic-banking|banking-packages|wealth|asset-management\/our-funds|help-and-support|KFS|foreign-exchange|ways-of-banking|self-service|terms-and-conditions|schedule-of-fees-and-charges|digital-cards|emirati|sme)(\/|$)/i.test(new URL(url).pathname);
-const priority = (url: string) => /^\/en\/(cards|accounts|loans|business-banking|corporate-and-institutional-banking|priority-banking|private-banking|islamic-banking|banking-packages|wealth|asset-management\/our-funds|help-and-support|KFS)(\/|$)/i.test(new URL(url).pathname) ? 0 : 1;
-const selected = entries.filter(entry => new URL(entry.url).origin === base).sort((a,b)=>priority(a.url)-priority(b.url)).slice(0, limit);
+const isPriorityPage = (url: string) => /^\/en\/(cards|accounts|loans|business-banking|corporate-and-institutional-banking|priority-banking|private-banking|islamic-banking|banking-packages|wealth|asset-management\/our-funds|invest-in-retail-sukuk|e20|smart-trade|globaltrades|emirates-nbd-pay|business-online|ruwad|help-and-support|KFS)(\/|$)/i.test(new URL(url).pathname);
+const isProductOrSupport = (url:string) => isPriorityPage(url) || /^\/en\/(foreign-exchange|ways-of-banking|self-service|terms-and-conditions|schedule-of-fees-and-charges|digital-cards|emirati|sme)(\/|$)/i.test(new URL(url).pathname);
+const selected = entries.filter(entry => new URL(entry.url).origin === base).sort((a,b)=>Number(isPriorityPage(b.url))-Number(isPriorityPage(a.url))).slice(0, limit);
 const report: unknown[] = [];
 await mkdir('data', { recursive: true });
 if(process.argv.includes('--resume')) {

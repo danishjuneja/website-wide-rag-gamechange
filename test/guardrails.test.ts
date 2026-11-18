@@ -18,3 +18,10 @@ test('separates individual credit decisions from a public fact',()=>{
 });
 
 test('separates an exact personal limit without repeating credit',()=>assert.equal(separatePersonalDecision('What is the minimum salary for Skywards Signature and what exact limit will I personally get?')?.publicQuestion,'What is the minimum salary for Skywards Signature'));
+
+test('allows requests to show public facts and distinguishes a personal prediction from published terms',()=>{
+ assert.equal(requiresAccountAction('Show me the annual fee for a Cedar credit card.'),false);
+ assert.equal(requiresAccountAction('Show me my card balance.'),true);
+ assert.equal(separatePersonalDecision('Can you predict my earnings next year?')?.publicQuestion,'');
+ assert.equal(separatePersonalDecision('Does the contract guarantee my return?'),null);
+});

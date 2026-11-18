@@ -24,10 +24,22 @@ export async function rerank(query: string, documents: string[]): Promise<number
   if (!Array.isArray(data.results)) throw new Error('Invalid reranking response');
   return data.results.map((x:{index:number})=>x.index).filter((x:unknown)=>Number.isInteger(x) && Number(x)>=0 && Number(x)<documents.length);
 }
-export async function generate(messages: Message[], system: string): Promise<string> {
+export async function generate(messages: Message[], system: string, shape?: string[] | 'turn'): Promise<string> {
   const key=process.env.GROQ_API_KEY;
   if (!key) throw new Error('Generation service is not configured');
-  const data=await request('https://api.groq.com/openai/v1/chat/completions',key,{model:process.env.GROQ_MODEL || 'openai/gpt-oss-120b',temperature:0,messages:[{role:'system',content:system},...messages],response_format:{type:'json_object'}});
+  const strings = { type: 'array', items: { type: 'string' } };
+  const properties = shape === 'turn'
+    ? { ambiguous: { type: 'boolean' }, query: { type: 'string' }, subjects: strings, product_queries: strings }
+    : { answer: { type: 'string' }, citations: { type: 'array', items: { type: 'string', enum: shape } } };
+  const responseFormat = shape ? {
+    type: 'json_schema',
+    json_schema: {
+      name: shape === 'turn' ? 'resolved_turn' : 'cited_answer',
+      strict: true,
+      schema: { type: 'object', properties, required: Object.keys(properties), additionalProperties: false },
+    },
+  } : { type: 'json_object' };
+  const data=await request('https://api.groq.com/openai/v1/chat/completions',key,{model:process.env.GROQ_MODEL || 'openai/gpt-oss-20b',temperature:0,messages:[{role:'system',content:system},...messages],response_format:responseFormat});
   if (typeof data.choices?.[0]?.message?.content !== 'string') throw new Error('Invalid generation response');
   return data.choices[0].message.content;
 }

@@ -6,7 +6,6 @@
   "scripts": {
     "test": "node --test test/*.test.ts",
     "inspect:sitemap": "node src/ingest/inspect-sitemap.ts",
-    "crawl:sample": "node src/ingest/crawl.ts",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -22,7 +21,7 @@
     "table:review": "node src/ingest/table-review.ts"
   },
   "engines": {
-    "node": ">=24"
+    "node": "24.x"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.119.0",

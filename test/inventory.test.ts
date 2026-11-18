@@ -9,3 +9,11 @@ test('separates unknown status and warns when category is incomplete',()=>{
  const r=formatProducts('credit cards',[{name:'Card A',status:'active',source_url:'https://bank.test/a'},{name:'Card B',status:'unknown',source_url:'https://bank.test/b'}],false)!;
  assert.match(r.answer,/Availability unconfirmed/); assert.match(r.answer,/may be incomplete/); assert.equal(r.citations.length,2);
 });
+
+test('distinguishes an inventory request from a fact request and a filter', () => {
+ assert.equal(isFilteredDiscovery('Which commercial cards do you have?'),false);
+ assert.equal(discoveryCategory('Which commercial cards do you have?'),'commercial cards');
+ assert.equal(isFilteredDiscovery('Which business cards have lounge access?'),true);
+ assert.equal(isDiscoveryRequest('Show me the annual fee for the Cedar credit card.'),false);
+ assert.equal(discoveryCategory('List the trade finance products.'),'trade finance');
+});

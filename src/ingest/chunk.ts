@@ -1,5 +1,5 @@
 export type Block = { heading: string[]; text: string; kind: 'paragraph' | 'list' | 'faq' | 'table' };
-export type Chunk = { heading: string[]; text: string; kind: Block['kind'] };
+type Chunk = { heading: string[]; text: string; kind: Block['kind'] };
 
 // Keep structured blocks intact. An overlong table or FAQ is flagged for review,
 // not split into potentially misleading fragments.

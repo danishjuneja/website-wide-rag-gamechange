@@ -1,5 +1,5 @@
 import { XMLParser, XMLValidator } from 'fast-xml-parser';
-export type SitemapEntry = { url: string; lastModified?: string };
+type SitemapEntry = { url: string; lastModified?: string };
 
 // Reject DTDs and nested sitemaps rather than silently reporting incomplete coverage.
 export function parseSitemap(xml: string): SitemapEntry[] {

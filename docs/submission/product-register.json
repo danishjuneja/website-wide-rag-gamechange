@@ -281,24 +281,24 @@
       "verified": true
     },
     {
-      "name": "GlobalCash Card (GCC)",
+      "name": "GlobalCash Card",
       "category": "prepaid cards",
       "source_url": "https://www.emiratesnbd.com/en/cards/prepaid-cards/globalcash-card",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Sustainable Deposit Account",
       "category": "deposits",
       "source_url": "https://www.emiratesnbd.com/en/accounts/deposits-account/sustainable-deposit-account",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "RegulaReturns Fixed Deposits Account",
       "category": "deposits",
       "source_url": "https://www.emiratesnbd.com/en/accounts/deposits-account/regulareturns-deposit-account",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
@@ -312,70 +312,70 @@
       "name": "FlexiSweep Deposit Account",
       "category": "deposits",
       "source_url": "https://www.emiratesnbd.com/en/accounts/deposits-account/flexisweep-deposit-accounts",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "FlexiDeposit Accounts",
       "category": "deposits",
       "source_url": "https://www.emiratesnbd.com/en/accounts/deposits-account/flexideposit-accounts",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Goal Recurring Deposit",
       "category": "deposits",
       "source_url": "https://www.emiratesnbd.com/en/accounts/deposits-account/goal-recurring-deposits",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Steady Saver Deposit",
       "category": "deposits",
       "source_url": "https://www.emiratesnbd.com/en/accounts/deposits-account/steadysaver-account",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Plus Saver Account",
       "category": "savings accounts",
       "source_url": "https://www.emiratesnbd.com/en/accounts/savings-accounts/plus-saver-account",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Savings Account in the UAE: Grow Your Money",
       "category": "savings accounts",
       "source_url": "https://www.emiratesnbd.com/en/accounts/savings-accounts/savings-account",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Skywards Savings Account and Visa Debit Card",
       "category": "savings accounts",
       "source_url": "https://www.emiratesnbd.com/en/accounts/savings-accounts/skywards-savings-account",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Tiered Savings Account",
       "category": "savings accounts",
       "source_url": "https://www.emiratesnbd.com/en/accounts/savings-accounts/tiered-savings-accounts",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Currency Passport Savings Account",
       "category": "savings accounts",
       "source_url": "https://www.emiratesnbd.com/en/accounts/savings-accounts/currency-passport-savings-account",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Family Savings Account",
       "category": "savings accounts",
       "source_url": "https://www.emiratesnbd.com/en/accounts/savings-accounts/family-savings-account",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
@@ -417,14 +417,14 @@
       "name": "Visa Signature Business Debit Card",
       "category": "debit cards",
       "source_url": "https://www.emiratesnbd.com/en/cards/debit-cards/visa-signature-business-debit-card",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
-      "name": "Visa Classic Debit Cards, Personal Banking",
+      "name": "Visa Classic Debit Card",
       "category": "debit cards",
       "source_url": "https://www.emiratesnbd.com/en/cards/debit-cards/visa-classic-debit-card",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
@@ -438,14 +438,14 @@
       "name": "Corporate & Institutional Banking - Visa Signature Business Debit Card",
       "category": "debit cards",
       "source_url": "https://www.emiratesnbd.com/en/cards/debit-cards/visa-signature-business-debit-card-cib",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Visa Business Debit Card",
       "category": "debit cards",
       "source_url": "https://www.emiratesnbd.com/en/cards/debit-cards/visa-business-debit-card",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
@@ -459,7 +459,7 @@
       "name": "Emirati Visa Signature Business Debit Card",
       "category": "debit cards",
       "source_url": "https://www.emiratesnbd.com/en/cards/debit-cards/emirati-business-debit-card",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
@@ -470,35 +470,35 @@
       "verified": true
     },
     {
-      "name": "Go4it Visa Gold Debit Card – Privileges & Offers",
+      "name": "Go4it Visa Gold Debit Card",
       "category": "debit cards",
       "source_url": "https://www.emiratesnbd.com/en/cards/debit-cards/go4it-visa-gold-debit-card",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
-      "name": "Visa Signature Debit Card - Elevate Banking Experience",
+      "name": "Visa Signature Debit Card",
       "category": "debit cards",
       "source_url": "https://www.emiratesnbd.com/en/cards/debit-cards/visa-signature-debit-card",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Signature by Priority Banking - Visa Infinite Debit Card",
       "category": "debit cards",
       "source_url": "https://www.emiratesnbd.com/en/cards/debit-cards/signature-by-priority-banking-visa-infinite-debit-card",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Visa Infinite Debit Card",
       "category": "debit cards",
       "source_url": "https://www.emiratesnbd.com/en/cards/debit-cards/visa-infinite-debit-card",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
-      "name": "Ladies Banking Debit Card UAE",
+      "name": "Visa Platinum Debit Card",
       "category": "debit cards",
       "source_url": "https://www.emiratesnbd.com/en/cards/debit-cards/visa-platinum-debit-card",
       "status": "unknown",
@@ -512,24 +512,24 @@
       "verified": true
     },
     {
-      "name": "Visa Platinum Debit Card UAE",
+      "name": "Beyond Visa Platinum Debit Card",
       "category": "debit cards",
       "source_url": "https://www.emiratesnbd.com/en/cards/debit-cards/beyond-visa-platinum-debit-card",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Emirati Visa Signature Debit Card",
       "category": "debit cards",
       "source_url": "https://www.emiratesnbd.com/en/cards/debit-cards/emirati-visa-signature-debit-card",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Visa Platinum Business Debit Card",
       "category": "debit cards",
       "source_url": "https://www.emiratesnbd.com/en/cards/debit-cards/visa-platinum-business-debit-card",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
@@ -585,7 +585,7 @@
       "name": "Business Vehicle and Equipment Loans",
       "category": "auto loans",
       "source_url": "https://www.emiratesnbd.com/en/loans/auto-loans/business-vehicle-and-equipment-loans",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
@@ -606,28 +606,28 @@
       "name": "Salary Transfer Loans for UAE Nationals",
       "category": "personal loans",
       "source_url": "https://www.emiratesnbd.com/en/loans/personal-loans/salary-transfer-loans-for-uae-nationals",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Salary Transfer Loans for Expats",
       "category": "personal loans",
       "source_url": "https://www.emiratesnbd.com/en/loans/personal-loans/salary-transfer-loans-for-expats",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Scholar Plus Education Loan",
       "category": "personal loans",
       "source_url": "https://www.emiratesnbd.com/en/loans/personal-loans/scholar-plus-education-loan",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Education Loan for Executives",
       "category": "personal loans",
       "source_url": "https://www.emiratesnbd.com/en/loans/personal-loans/scholar-plus-education-loan-for-executives",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
@@ -655,63 +655,63 @@
       "name": "Expat Mortgage",
       "category": "home loans",
       "source_url": "https://www.emiratesnbd.com/en/loans/home-loans/home-loans-for-expatriates",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Self-Construction Home Loans",
       "category": "home loans",
       "source_url": "https://www.emiratesnbd.com/en/loans/home-loans/home-loans-for-self-construction",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Loan Against Property for UAE Nationals",
       "category": "home loans",
       "source_url": "https://www.emiratesnbd.com/en/loans/home-loans/loan-against-property-for-uae-nationals",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Sheikh Zayed Housing Program (SZHP)",
       "category": "home loans",
       "source_url": "https://www.emiratesnbd.com/en/loans/home-loans/government-housing-program",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Expat loans against property",
       "category": "home loans",
       "source_url": "https://www.emiratesnbd.com/en/loans/home-loans/loan-against-property-for-expatriates",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Home Loans for UAE Nationals",
       "category": "home loans",
       "source_url": "https://www.emiratesnbd.com/en/loans/home-loans/home-loans-for-uae-nationals",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Emirati Millionaire Account",
       "category": "savings accounts",
       "source_url": "https://www.emiratesnbd.com/en/accounts/savings-accounts/emirati-millionaire-account",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Millionaire Savings Account",
       "category": "savings accounts",
       "source_url": "https://www.emiratesnbd.com/en/accounts/savings-accounts/millionaire-savings-account",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Manchester United Savings Account",
       "category": "savings accounts",
       "source_url": "https://www.emiratesnbd.com/en/accounts/savings-accounts/manchester-united-savings-account",
-      "status": "unknown",
+      "status": "legacy",
       "verified": true
     },
     {
@@ -722,24 +722,24 @@
       "verified": true
     },
     {
-      "name": "Visa Infinite Business Debit Card",
+      "name": "Business Banking VIP - Visa Infinite Business Debit Card",
       "category": "debit cards",
       "source_url": "https://www.emiratesnbd.com/en/cards/debit-cards/visa-infinite-business-debit-card",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "Fixed Deposit",
       "category": "deposits",
       "source_url": "https://www.emiratesnbd.com/en/accounts/deposits-account/fixed-deposits-account",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
       "name": "EarlySaver Account and Deposit",
       "category": "savings accounts",
       "source_url": "https://www.emiratesnbd.com/en/accounts/savings-accounts/earlysaver-account",
-      "status": "unknown",
+      "status": "active",
       "verified": true
     },
     {
@@ -799,7 +799,7 @@
       "verified": true
     },
     {
-      "name": "ENBD Shari’ah Private Financing Fund SP",
+      "name": "ENBD Shariâ€™ah Private Financing Fund SP",
       "category": "funds",
       "source_url": "https://www.emiratesnbd.com/en/asset-management/our-funds/enbd-shariah-private-financing-fund-sp",
       "status": "unknown",
@@ -1112,77 +1112,1570 @@
       "source_url": "https://www.emiratesnbd.com/en/islamic-banking/corporate-and-institutional-banking/islamic-deposit-products",
       "status": "unknown",
       "verified": true
+    },
+    {
+      "name": "FX — FX Spot",
+      "category": "treasury products",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "verified": true
+    },
+    {
+      "name": "FX — Swaps",
+      "category": "treasury products",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "verified": true
+    },
+    {
+      "name": "FX — Forwards",
+      "category": "treasury products",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "verified": true
+    },
+    {
+      "name": "FX — Vanilla and Exotic OTC FX Options",
+      "category": "treasury products",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "verified": true
+    },
+    {
+      "name": "FX — Cross Currency Swaps",
+      "category": "treasury products",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "verified": true
+    },
+    {
+      "name": "FX — Basis Swaps",
+      "category": "treasury products",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "verified": true
+    },
+    {
+      "name": "Interest Rates — IRS Interest Rate Swaps",
+      "category": "treasury products",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "verified": true
+    },
+    {
+      "name": "Interest Rates — Futures",
+      "category": "treasury products",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "verified": true
+    },
+    {
+      "name": "Interest Rates — FRA – Forward Rate Agreements",
+      "category": "treasury products",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "verified": true
+    },
+    {
+      "name": "Interest Rates — Asset Swaps",
+      "category": "treasury products",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "verified": true
+    },
+    {
+      "name": "Interest Rates — Vanilla and Exotic OTC Rate Options",
+      "category": "treasury products",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "verified": true
+    },
+    {
+      "name": "Interest Rates — Interest Rate Options",
+      "category": "treasury products",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "verified": true
+    },
+    {
+      "name": "Commodities — Swaps",
+      "category": "treasury products",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "verified": true
+    },
+    {
+      "name": "Commodities — Future and Exchange Trade Options",
+      "category": "treasury products",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "verified": true
+    },
+    {
+      "name": "Commodities — Gold Loans",
+      "category": "treasury products",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "verified": true
+    },
+    {
+      "name": "Commodities — OTC Options",
+      "category": "treasury products",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "verified": true
+    },
+    {
+      "name": "Commodities — Physical Bullion",
+      "category": "treasury products",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "verified": true
+    },
+    {
+      "name": "Equities — Equity Options",
+      "category": "treasury products",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "verified": true
+    },
+    {
+      "name": "Equities — Futures",
+      "category": "treasury products",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "verified": true
+    },
+    {
+      "name": "Equities — Exchange Traded Options",
+      "category": "treasury products",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "verified": true
+    },
+    {
+      "name": "Equities — ETFs",
+      "category": "treasury products",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "verified": true
+    },
+    {
+      "name": "Equities — Cash Equities",
+      "category": "treasury products",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "verified": true
+    },
+    {
+      "name": "Real Estate Financing",
+      "category": "corporate financing",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/financing-solutions",
+      "verified": true
+    },
+    {
+      "name": "Asset based Financing",
+      "category": "corporate financing",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/financing-solutions",
+      "verified": true
+    },
+    {
+      "name": "Commodity Finance",
+      "category": "corporate financing",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/financing-solutions",
+      "verified": true
+    },
+    {
+      "name": "Project Finance",
+      "category": "corporate financing",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/financing-solutions",
+      "verified": true
+    },
+    {
+      "name": "Equipment Finance",
+      "category": "corporate financing",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/financing-solutions",
+      "verified": true
+    },
+    {
+      "name": "Standby Letter of Credit",
+      "category": "trade finance",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/trade-supply-chain-finance",
+      "verified": true
+    },
+    {
+      "name": "Financial Guarantees",
+      "category": "trade finance",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/trade-supply-chain-finance",
+      "verified": true
+    },
+    {
+      "name": "Non-Financial Guarantees",
+      "category": "trade finance",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/trade-supply-chain-finance",
+      "verified": true
+    },
+    {
+      "name": "Factoring",
+      "category": "trade finance",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/trade-supply-chain-finance",
+      "verified": true
+    },
+    {
+      "name": "Invoice Discounting",
+      "category": "trade finance",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/trade-supply-chain-finance",
+      "verified": true
+    },
+    {
+      "name": "Cheque Discounting",
+      "category": "trade finance",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/trade-supply-chain-finance",
+      "verified": true
+    },
+    {
+      "name": "Borrowing base Finance",
+      "category": "trade finance",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/trade-supply-chain-finance",
+      "verified": true
+    },
+    {
+      "name": "Supply Chain Finance",
+      "category": "trade finance",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/trade-supply-chain-finance",
+      "verified": true
+    },
+    {
+      "name": "Issuance of Documentary Credits",
+      "category": "trade finance",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/trade-supply-chain-finance",
+      "verified": true
+    },
+    {
+      "name": "Import Loans (Loan against Trust Receipt)",
+      "category": "trade finance",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/trade-supply-chain-finance",
+      "verified": true
+    },
+    {
+      "name": "Documentary Collections",
+      "category": "trade finance",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/trade-supply-chain-finance",
+      "verified": true
+    },
+    {
+      "name": "Export Documentary Credits",
+      "category": "trade finance",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/trade-supply-chain-finance",
+      "verified": true
+    },
+    {
+      "name": "Export DC Confirmation",
+      "category": "trade finance",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/trade-supply-chain-finance",
+      "verified": true
+    },
+    {
+      "name": "Post Shipping Finance",
+      "category": "trade finance",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/trade-supply-chain-finance",
+      "verified": true
+    },
+    {
+      "name": "Cardless Cash Withdrawal",
+      "category": "cash management",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/cash-management-services/cardless-cash-withdrawal",
+      "verified": true
+    },
+    {
+      "name": "ICCS Collect from businessONLINE",
+      "category": "cash management",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/cash-management-services/iccs-collect-from-businessonline",
+      "verified": true
+    },
+    {
+      "name": "API Banking",
+      "category": "corporate digital banking",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/digital-solution/api-banking",
+      "verified": true
+    },
+    {
+      "name": "Virtual Accounts",
+      "category": "corporate digital banking",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/digital-solution/virtual-accounts",
+      "verified": true
+    },
+    {
+      "name": "SWIFT for Corporates",
+      "category": "corporate digital banking",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/digital-solution/swift-corporates",
+      "verified": true
+    },
+    {
+      "name": "Smart Cash Deposit Machines",
+      "category": "corporate digital banking",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/digital-solution/smart-cash-deposit-machine",
+      "verified": true
+    },
+    {
+      "name": "smartDEAL",
+      "category": "corporate digital banking",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/digital-solution/smart-deal",
+      "verified": true
+    },
+    {
+      "name": "smartSCF",
+      "category": "corporate digital banking",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/digital-solution/smartscf",
+      "verified": true
+    },
+    {
+      "name": "businessONLINE Connect",
+      "category": "corporate digital banking",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/digital-solution/businessonline-connect",
+      "verified": true
+    },
+    {
+      "name": "Ijarah",
+      "category": "corporate Islamic financing",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/islamic-banking/corporate-and-institutional-banking/shariah-compliant-financing",
+      "verified": true
+    },
+    {
+      "name": "Forward Ijarah",
+      "category": "corporate Islamic financing",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/islamic-banking/corporate-and-institutional-banking/shariah-compliant-financing",
+      "verified": true
+    },
+    {
+      "name": "Murabaha Finance",
+      "category": "corporate Islamic financing",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/islamic-banking/corporate-and-institutional-banking/shariah-compliant-financing",
+      "verified": true
+    },
+    {
+      "name": "Musharaka",
+      "category": "corporate Islamic financing",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/islamic-banking/corporate-and-institutional-banking/shariah-compliant-financing",
+      "verified": true
+    },
+    {
+      "name": "Tawarruq",
+      "category": "corporate Islamic financing",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/islamic-banking/corporate-and-institutional-banking/shariah-compliant-financing",
+      "verified": true
+    },
+    {
+      "name": "Mudaraba Finance",
+      "category": "corporate Islamic financing",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/islamic-banking/corporate-and-institutional-banking/shariah-compliant-financing",
+      "verified": true
+    },
+    {
+      "name": "Wakala",
+      "category": "corporate Islamic financing",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/islamic-banking/corporate-and-institutional-banking/shariah-compliant-financing",
+      "verified": true
+    },
+    {
+      "name": "Instalment Payment Plan",
+      "category": "card financing",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/cards/credit-cards/installment-payment-plan",
+      "verified": true
+    },
+    {
+      "name": "Balance Transfer",
+      "category": "card financing",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/cards/credit-cards/balance-transfer",
+      "verified": true
+    },
+    {
+      "name": "Loan on Card within credit limit",
+      "category": "card financing",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/cards/credit-cards/loan-on-card-within-credit-limit",
+      "verified": true
+    },
+    {
+      "name": "Balance Conversion",
+      "category": "card financing",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/cards/credit-cards/balance-conversion",
+      "verified": true
+    },
+    {
+      "name": "Loan on Card beyond credit limit",
+      "category": "card financing",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/cards/credit-cards/loan-on-card-beyond-credit-limit",
+      "verified": true
+    },
+    {
+      "name": "Shake N Save Account",
+      "category": "savings accounts",
+      "status": "legacy",
+      "source_url": "https://www.emiratesnbd.com/en/accounts/legacy-accounts",
+      "verified": true
+    },
+    {
+      "name": "Smart S@ver Account",
+      "category": "savings accounts",
+      "status": "legacy",
+      "source_url": "https://www.emiratesnbd.com/en/accounts/legacy-accounts",
+      "verified": true
+    },
+    {
+      "name": "Emirates NBD Wholesale Travel Solution Virtual Card",
+      "category": "commercial cards",
+      "status": "active",
+      "source_url": "https://www.emiratesnbd.com/en/cards/commercial-cards/wholesale-travel-solution-corporate-card",
+      "verified": true
+    },
+    {
+      "name": "Corporate Virtual Mobile Card",
+      "category": "commercial cards",
+      "status": "active",
+      "source_url": "https://www.emiratesnbd.com/en/cards/commercial-cards/corporate-virtual-mobile-card",
+      "verified": true
+    },
+    {
+      "name": "Visa Corporate Card",
+      "category": "commercial cards",
+      "status": "active",
+      "source_url": "https://www.emiratesnbd.com/en/cards/commercial-cards/visa-corporate-card",
+      "verified": true
+    },
+    {
+      "name": "Mastercard Corporate Card",
+      "category": "commercial cards",
+      "status": "active",
+      "source_url": "https://www.emiratesnbd.com/en/cards/commercial-cards/mastercard-corporate-card",
+      "verified": true
+    },
+    {
+      "name": "Visa Commercial Pay",
+      "category": "commercial payment solutions",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/cards/commercial-cards/visa-commercial-pay",
+      "verified": true
+    },
+    {
+      "name": "DMCC Corporate Card",
+      "category": "commercial cards",
+      "status": "active",
+      "source_url": "https://www.emiratesnbd.com/en/cards/commercial-cards/dmcc-corporate-card",
+      "verified": true
+    },
+    {
+      "name": "DP World Corporate Credit Card",
+      "category": "commercial cards",
+      "status": "active",
+      "source_url": "https://www.emiratesnbd.com/en/cards/commercial-cards/dp-world-corporate-credit-card",
+      "verified": true
+    },
+    {
+      "name": "Business Credit Card",
+      "category": "commercial cards",
+      "status": "active",
+      "source_url": "https://www.emiratesnbd.com/en/cards/commercial-cards/business-credit-card",
+      "verified": true
+    },
+    {
+      "name": "Business Rewards",
+      "category": "commercial cards",
+      "status": "active",
+      "source_url": "https://www.emiratesnbd.com/en/cards/commercial-cards/business-rewards",
+      "verified": true
+    },
+    {
+      "name": "SHARE Visa Private Credit Card",
+      "category": "credit cards",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/cards/credit-cards/share-visa-private-credit-card",
+      "verified": true
+    },
+    {
+      "name": "Darna Visa Infinite Privilege Credit Card",
+      "category": "credit cards",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/cards/credit-cards/darna-visa-infinite-privilege-credit-card",
+      "verified": true
+    },
+    {
+      "name": "Salary Prepay Card",
+      "category": "prepaid cards",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/cards/salary-prepay-card",
+      "verified": true
+    },
+    {
+      "name": "Value Account",
+      "category": "current accounts",
+      "status": "legacy",
+      "source_url": "https://www.emiratesnbd.com/en/accounts/value-account",
+      "verified": true
+    },
+    {
+      "name": "Monthly Investment Plan",
+      "category": "investments",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/wealth/monthly-investment-plan",
+      "verified": true
+    },
+    {
+      "name": "Fractional Bonds & Sukuk",
+      "category": "investments",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/wealth/fractional-bonds",
+      "verified": true
+    },
+    {
+      "name": "Gold Saving Certificates",
+      "category": "investments",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/wealth/gold-savings-certificate",
+      "verified": true
+    },
+    {
+      "name": "Lombard Lending",
+      "category": "private banking loans",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/private-banking/believe-in-your-next/lombard-lending-solutions",
+      "verified": true
+    },
+    {
+      "name": "DirectRemit",
+      "category": "money transfers",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/foreign-exchange/directremit",
+      "verified": true
+    },
+    {
+      "name": "Western Union",
+      "category": "money transfers",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/foreign-exchange/western-union",
+      "verified": true
+    },
+    {
+      "name": "One Pay Debt Consolidation",
+      "category": "personal loans",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/loans/debt-consolidation",
+      "verified": true
+    },
+    {
+      "name": "Overdraft",
+      "category": "overdrafts",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/loans/overdraft-loans",
+      "verified": true
+    },
+    {
+      "name": "EduCare Insurance Program",
+      "category": "insurance plans",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/cards/educare-insurance-program",
+      "verified": true
+    },
+    {
+      "name": "Credit Shield Pro",
+      "category": "insurance plans",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/cards/credit-shield-pro",
+      "verified": true
+    },
+    {
+      "name": "Personal Loan Protect Pro",
+      "category": "insurance plans",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/loans/personal-loan-protect-pro",
+      "verified": true
+    },
+    {
+      "name": "businessONLINE",
+      "category": "corporate digital banking",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/business-online",
+      "verified": true
+    },
+    {
+      "name": "businessONLINE X Mobile App",
+      "category": "corporate digital banking",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/business-online/businessonline-mobile-app",
+      "verified": true
+    },
+    {
+      "name": "Payment Tracker",
+      "category": "corporate digital banking",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/business-online/instant-banking-services/payment-tracker",
+      "verified": true
+    },
+    {
+      "name": "E20. Mobile Banking App",
+      "category": "corporate digital banking",
+      "status": "legacy",
+      "source_url": "https://www.emiratesnbd.com/en/e20",
+      "verified": true
+    },
+    {
+      "name": "Emirates NBD Pay",
+      "category": "commercial payment solutions",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/emirates-nbd-pay",
+      "verified": true
+    },
+    {
+      "name": "Retail Sukuk",
+      "category": "investments",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/invest-in-retail-sukuk",
+      "verified": true
+    },
+    {
+      "name": "smartTRADE",
+      "category": "trade finance",
+      "status": "unknown",
+      "source_url": "https://www.emiratesnbd.com/en/smart-trade",
+      "verified": true
+    },
+    {
+      "name": "Women Protect",
+      "category": "insurance plans",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/wealth/insurance"
+    },
+    {
+      "name": "Care for You",
+      "category": "insurance plans",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/wealth/insurance"
+    },
+    {
+      "name": "Critical Illness",
+      "category": "insurance plans",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/wealth/insurance"
+    },
+    {
+      "name": "Multi Protect",
+      "category": "insurance plans",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/wealth/insurance"
+    },
+    {
+      "name": "Home insurance",
+      "category": "insurance plans",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/wealth/general-insurance-plans"
+    },
+    {
+      "name": "Motor insurance",
+      "category": "insurance plans",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/wealth/general-insurance-plans"
+    },
+    {
+      "name": "Travel insurance",
+      "category": "insurance plans",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/wealth/general-insurance-plans"
+    },
+    {
+      "name": "Spot and Forward Contracts",
+      "category": "treasury products",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/treasury",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Swaps",
+      "category": "treasury products",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/treasury",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Currency Options",
+      "category": "treasury products",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/treasury",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Forward Rate Agreement (FRA)",
+      "category": "treasury products",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/treasury",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Structured Deposits and Notes",
+      "category": "treasury products",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/treasury",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Dual Currency Deposits (DCI)",
+      "category": "treasury products",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/treasury",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Smart Cash Management Package",
+      "category": "cash management",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/cash-management/cash-management-packages",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Grow Cash Management Package",
+      "category": "cash management",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/cash-management/cash-management-packages",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Manage Cash Management Package",
+      "category": "cash management",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/cash-management/cash-management-packages",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Image Cheque Clearing System (ICCS)",
+      "category": "cash management",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/cash-management/cash-management-packages",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Cash-in-Transit (CIT)",
+      "category": "cash management",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/cash-management/cash-management-packages",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Cross Border, Domestic & Intra-bank Transfers",
+      "category": "cash management",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/cash-management-services",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Salary and Pension Payments",
+      "category": "cash management",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/cash-management-services",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Noqodi Payments",
+      "category": "cash management",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/cash-management-services",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "VAT and Excise Payments",
+      "category": "cash management",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/cash-management-services",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "UAE Direct Debit Service",
+      "category": "cash management",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/cash-management-services",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "UAE Payment Gateway Service (UAEPGS)",
+      "category": "cash management",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/cash-management-services",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Real Estate Escrow",
+      "category": "cash management",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/cash-management-services",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Commercial Escrow",
+      "category": "cash management",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/cash-management-services",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Owners Association / Body Corporate",
+      "category": "cash management",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/cash-management-services",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Debt Capital Markets",
+      "category": "investment banking",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/investment-banking",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Loan Syndications",
+      "category": "investment banking",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/investment-banking",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Equity Capital Markets and M&A Advisory",
+      "category": "investment banking",
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/investment-banking",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Inward telegraphic transfer",
+      "category": "foreign exchange",
+      "source_url": "https://www.emiratesnbd.com/en/foreign-exchange",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Account to account transfer",
+      "category": "foreign exchange",
+      "source_url": "https://www.emiratesnbd.com/en/foreign-exchange",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Special rate deal booking",
+      "category": "foreign exchange",
+      "source_url": "https://www.emiratesnbd.com/en/foreign-exchange",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Foreign currency cash via branches",
+      "category": "foreign exchange",
+      "source_url": "https://www.emiratesnbd.com/en/foreign-exchange",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Online FCY remittances",
+      "category": "foreign exchange",
+      "source_url": "https://www.emiratesnbd.com/en/foreign-exchange",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Gold Investment Account",
+      "category": "business accounts",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/business-accounts/gold-account",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Silver Investment Account",
+      "category": "business accounts",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/business-accounts/silver-account",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Signature by Priority Banking",
+      "category": "banking packages",
+      "source_url": "https://www.emiratesnbd.com/en/priority-banking/our-solutions/packages/signature",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Emirati Package",
+      "category": "banking packages",
+      "source_url": "https://www.emiratesnbd.com/en/emirati",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "VIP Privilege",
+      "category": "business packages",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/vip-privilege",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Trust and Estate Planning",
+      "category": "private banking services",
+      "source_url": "https://www.emiratesnbd.com/en/private-banking/trust-and-estate-planning",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "External Asset Management",
+      "category": "private banking services",
+      "source_url": "https://www.emiratesnbd.com/en/private-banking/believe-in-your-next/external-asset-management",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Investment Advisory Services",
+      "category": "private banking services",
+      "source_url": "https://www.emiratesnbd.com/en/private-banking/advisory-services",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Safe Deposit Locker",
+      "category": "safe deposit lockers",
+      "source_url": "https://www.emiratesnbd.com/en/priority-banking/our-solutions/safe-deposit-lockers",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Cash Pickup Service",
+      "category": "cash management",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/cash-pickup-service",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Trade Execution Services",
+      "category": "private banking services",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/private-banking/believe-in-your-next"
+    },
+    {
+      "name": "Discretionary Portfolio Management",
+      "category": "private banking services",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/private-banking/believe-in-your-next"
+    },
+    {
+      "name": "Real Estate Advisory",
+      "category": "private banking services",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/private-banking/believe-in-your-next"
+    },
+    {
+      "name": "Spot Trade",
+      "category": "treasury products",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/business-banking"
+    },
+    {
+      "name": "Forward Contracts",
+      "category": "treasury products",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/business-banking"
+    },
+    {
+      "name": "Interest Rate Swap",
+      "category": "treasury products",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/business-banking"
+    },
+    {
+      "name": "Structured Deposit",
+      "category": "treasury products",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/business-banking"
+    },
+    {
+      "name": "Slice by Network",
+      "category": "card financing",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/cards/credit-cards/installment-overview"
+    },
+    {
+      "name": "Funding/Investment — Deposits",
+      "category": "treasury products",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury"
+    },
+    {
+      "name": "Funding/Investment — Repo",
+      "category": "treasury products",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury"
+    },
+    {
+      "name": "Funding/Investment — Reverse Repo",
+      "category": "treasury products",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury"
+    },
+    {
+      "name": "Funding/Investment — EMTN Programme",
+      "category": "treasury products",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury"
+    },
+    {
+      "name": "Fixed Income and Credit — Fixed Income Securities",
+      "category": "treasury products",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury"
+    },
+    {
+      "name": "Fixed Income and Credit — Total Return Swaps",
+      "category": "treasury products",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury"
+    },
+    {
+      "name": "Fixed Income and Credit — Credit Default Swaps",
+      "category": "treasury products",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury"
+    },
+    {
+      "name": "Islamic Products — Murabaha",
+      "category": "treasury products",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury"
+    },
+    {
+      "name": "Islamic Products — Wakala",
+      "category": "treasury products",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury"
+    },
+    {
+      "name": "Islamic Products — Profit Rate Swaps",
+      "category": "treasury products",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury"
+    },
+    {
+      "name": "Islamic Products — Cross-currency Profit Rate Swaps",
+      "category": "treasury products",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury"
+    },
+    {
+      "name": "Islamic Products — Collateralised Murabaha",
+      "category": "treasury products",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury"
+    },
+    {
+      "name": "Islamic Products — Islamic Profit Rate Options",
+      "category": "treasury products",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury"
+    },
+    {
+      "name": "Islamic Products — Shari’ah Compliant Structured Products",
+      "category": "treasury products",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury"
+    },
+    {
+      "name": "Islamic Products — T-Bills",
+      "category": "treasury products",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury"
+    },
+    {
+      "name": "Islamic Products — Notes",
+      "category": "treasury products",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury"
+    },
+    {
+      "name": "Islamic Products — Sukuks, Islamic FX Forwards and Options",
+      "category": "treasury products",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury"
+    },
+    {
+      "name": "Property",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/wealth-management-solutions/growing-your-wealth",
+      "category": "insurance plans",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Public liability",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/wealth-management-solutions/growing-your-wealth",
+      "category": "insurance plans",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Business interruptions",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/wealth-management-solutions/growing-your-wealth",
+      "category": "insurance plans",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Machinery breakdown",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/wealth-management-solutions/growing-your-wealth",
+      "category": "insurance plans",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Refrigerated stock and electronic equipment",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/wealth-management-solutions/growing-your-wealth",
+      "category": "insurance plans",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Goods in transit (land only)",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/wealth-management-solutions/growing-your-wealth",
+      "category": "insurance plans",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Group personal accident",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/wealth-management-solutions/growing-your-wealth",
+      "category": "insurance plans",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Workmen's compensation",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/wealth-management-solutions/growing-your-wealth",
+      "category": "insurance plans",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Money & personal assault",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/wealth-management-solutions/growing-your-wealth",
+      "category": "insurance plans",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Mutual Funds",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/wealth-management-solutions/growing-your-wealth",
+      "category": "investments",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Bonds",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/wealth-management-solutions/growing-your-wealth",
+      "category": "investments",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Sukuks",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/wealth-management-solutions/growing-your-wealth",
+      "category": "investments",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Structured Products",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/wealth-management-solutions/growing-your-wealth",
+      "category": "investments",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Gold Savings Certificates",
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/wealth-management-solutions/growing-your-wealth",
+      "category": "investments",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Equities",
+      "source_url": "https://www.emiratesnbd.com/en/wealth/grow-your-wealth",
+      "category": "investments",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "physical gold",
+      "source_url": "https://www.emiratesnbd.com/en/wealth/grow-your-wealth",
+      "category": "investments",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Telegraphic Transfers",
+      "source_url": "https://www.emiratesnbd.com/en/foreign-exchange",
+      "category": "money transfers",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Demand Draft",
+      "source_url": "https://www.emiratesnbd.com/en/foreign-exchange",
+      "category": "money transfers",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "mePay",
+      "source_url": "https://www.emiratesnbd.com/en/foreign-exchange",
+      "category": "money transfers",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Overdraft against Salary",
+      "source_url": "https://www.emiratesnbd.com/en/loans/overdraft-loans",
+      "category": "overdrafts",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Overdraft against Fixed Deposit",
+      "source_url": "https://www.emiratesnbd.com/en/loans/overdraft-loans",
+      "category": "overdrafts",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "real estate financing",
+      "source_url": "https://www.emiratesnbd.com/en/private-banking/believe-in-your-next/lombard-lending-solutions",
+      "category": "private banking loans",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Point of Sale (POS) Solutions",
+      "source_url": "https://www.emiratesnbd.com/en/emirates-nbd-pay",
+      "category": "commercial payment solutions",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "Dynamic currency conversion",
+      "source_url": "https://www.emiratesnbd.com/en/emirates-nbd-pay",
+      "category": "commercial payment solutions",
+      "status": "unknown",
+      "verified": true
+    },
+    {
+      "name": "E-commerce Payment Solutions",
+      "category": "commercial payment solutions",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/emirates-nbd-pay"
+    },
+    {
+      "name": "Pay by link",
+      "category": "commercial payment solutions",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/emirates-nbd-pay"
+    },
+    {
+      "name": "Post-dated cheque warehousing",
+      "category": "cash management",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/business-banking/cash-management"
+    },
+    {
+      "name": "Multi-Currency Capabilities",
+      "category": "cash management",
+      "status": "unknown",
+      "verified": true,
+      "source_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/cash-management-services"
     }
   ],
   "categories": [
     {
       "category": "Islamic accounts",
-      "reconciled": false
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/islamic-banking/retail-banking-and-wealth-management/islamic-accounts",
+      "reviewed_at": "2026-11-19"
     },
     {
       "category": "auto loans",
-      "reconciled": false
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/loans/auto-loans",
+      "reviewed_at": "2026-11-19"
     },
     {
       "category": "banking packages",
-      "reconciled": false
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/banking-packages",
+      "reviewed_at": "2026-11-19"
     },
     {
       "category": "credit cards",
-      "reconciled": false
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/cards/credit-cards",
+      "reviewed_at": "2026-11-19"
     },
     {
       "category": "current accounts",
-      "reconciled": false
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/accounts/current-accounts",
+      "reviewed_at": "2026-11-19"
     },
     {
       "category": "debit cards",
-      "reconciled": false
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/cards/debit-cards",
+      "reviewed_at": "2026-11-19"
     },
     {
       "category": "deposits",
-      "reconciled": false
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/accounts/deposits-account",
+      "reviewed_at": "2026-11-19"
     },
     {
       "category": "funds",
-      "reconciled": false
+      "reconciled": false,
+      "listing_url": "https://www.emiratesnbd.com/en/asset-management/our-funds",
+      "reviewed_at": "2026-11-19"
     },
     {
       "category": "home loans",
-      "reconciled": false
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/loans/home-loans",
+      "reviewed_at": "2026-11-19"
     },
     {
       "category": "personal loans",
-      "reconciled": false
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/loans/personal-loans",
+      "reviewed_at": "2026-11-19"
     },
     {
       "category": "prepaid cards",
-      "reconciled": false
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/cards/prepaid-cards",
+      "reviewed_at": "2026-11-19"
     },
     {
       "category": "savings accounts",
-      "reconciled": false
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/accounts/savings-accounts",
+      "reviewed_at": "2026-11-19"
     },
     {
       "category": "business accounts",
-      "reconciled": false
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/business-banking/business-accounts",
+      "reviewed_at": "2026-11-19"
     },
     {
       "category": "business loans",
-      "reconciled": false
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/business-banking/long-term",
+      "reviewed_at": "2026-11-19"
     },
     {
       "category": "business packages",
-      "reconciled": false
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/business-banking/business-packages",
+      "reviewed_at": "2026-11-19"
     },
     {
       "category": "corporate Islamic deposits",
-      "reconciled": false
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/islamic-banking/corporate-and-institutional-banking/islamic-deposit-products",
+      "reviewed_at": "2026-11-19"
     },
     {
       "category": "working capital",
-      "reconciled": false
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/business-banking/working-capital",
+      "reviewed_at": "2026-11-19"
+    },
+    {
+      "category": "card financing",
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/cards/credit-cards/installment-overview",
+      "reviewed_at": "2026-11-19"
+    },
+    {
+      "category": "cash management",
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/cash-management-services",
+      "reviewed_at": "2026-11-19"
+    },
+    {
+      "category": "commercial cards",
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/cards/commercial-cards",
+      "reviewed_at": "2026-11-19"
+    },
+    {
+      "category": "commercial payment solutions",
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/payment-solutions",
+      "reviewed_at": "2026-11-19"
+    },
+    {
+      "category": "corporate Islamic financing",
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/islamic-banking/corporate-and-institutional-banking/shariah-compliant-financing",
+      "reviewed_at": "2026-11-19"
+    },
+    {
+      "category": "corporate digital banking",
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/digital-solution",
+      "reviewed_at": "2026-11-19"
+    },
+    {
+      "category": "corporate financing",
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/financing-solutions",
+      "reviewed_at": "2026-11-19"
+    },
+    {
+      "category": "insurance plans",
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/wealth/insurance",
+      "reviewed_at": "2026-11-19"
+    },
+    {
+      "category": "investments",
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/wealth",
+      "reviewed_at": "2026-11-19"
+    },
+    {
+      "category": "money transfers",
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/foreign-exchange",
+      "reviewed_at": "2026-11-19"
+    },
+    {
+      "category": "overdrafts",
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/loans/overdraft-loans",
+      "reviewed_at": "2026-11-19"
+    },
+    {
+      "category": "private banking loans",
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/private-banking/believe-in-your-next/lombard-lending-solutions",
+      "reviewed_at": "2026-11-19"
+    },
+    {
+      "category": "trade finance",
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/transaction-banking/trade-supply-chain-finance",
+      "reviewed_at": "2026-11-19"
+    },
+    {
+      "category": "treasury products",
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/global-markets-treasury",
+      "reviewed_at": "2026-11-19"
+    },
+    {
+      "category": "foreign exchange",
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/foreign-exchange",
+      "reviewed_at": "2026-11-19"
+    },
+    {
+      "category": "investment banking",
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/corporate-and-institutional-banking/investment-banking",
+      "reviewed_at": "2026-11-19"
+    },
+    {
+      "category": "private banking services",
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/private-banking/believe-in-your-next",
+      "reviewed_at": "2026-11-19"
+    },
+    {
+      "category": "safe deposit lockers",
+      "reconciled": true,
+      "listing_url": "https://www.emiratesnbd.com/en/priority-banking/our-solutions/safe-deposit-lockers",
+      "reviewed_at": "2026-11-19"
     }
   ],
-  "review_note": "Existing reviewed credit-card listing plus product identity from detail-page titles and category paths. Unknown means current availability has not been independently confirmed."
+  "review_note": "Reconciled English product and service identities against rendered category listings and sitemap detail pages on 2026-11-19. Funds remain unverified by user agreement. Unknown availability is retained for entries lacking explicit availability evidence. Reconciliation concerns catalogue identity and does not verify all financial terms."
 }

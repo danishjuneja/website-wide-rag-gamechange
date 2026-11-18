@@ -3,6 +3,7 @@ import { answerQuestion } from '../../../rag/chat';
 import { validateHistory } from '../../../rag/core';
 
 export const runtime = 'nodejs';
+export const maxDuration = 300;
 export async function POST(request: Request) {
   if (Number(request.headers.get('content-length') || 0) > 70000) return NextResponse.json({error:'Message is too large.'},{status:413});
   try {

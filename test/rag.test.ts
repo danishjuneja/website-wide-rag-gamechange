@@ -1,10 +1,7 @@
 import { test } from 'node:test';
 import { strict as assert } from 'node:assert';
-import { selectRelatedContext, answerValidationIssue, validateAnswer, validateHistory, rankFusion, searchQueries } from '../src/rag/core.ts';
+import { selectRelatedContext, answerValidationIssue, validateAnswer, validateHistory, searchQueries } from '../src/rag/core.ts';
 
-test('fuses lexical and vector candidates without duplicate IDs', () => {
-  assert.deepEqual(rankFusion(['a','b'], ['b','c']).map(x => x.id), ['b','a','c']);
-});
 test('rejects generated answers with fabricated sources', () => {
   assert.equal(validateAnswer({answer:'A', citations:['https://evil.test']}, ['https://bank.test']), null);
   assert.deepEqual(validateAnswer({answer:'A', citations:['https://bank.test']}, ['https://bank.test']), {answer:'A [1]',citations:['https://bank.test']});

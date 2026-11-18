@@ -36,3 +36,36 @@ grant select,insert,update,delete on public.rag_chunks, public.rag_active_versio
 grant usage,select on sequence public.rag_chunks_id_seq, public.rag_products_id_seq to service_role;
 revoke all on function public.hybrid_search(text,vector,text,integer,uuid) from public, anon, authenticated;
 grant execute on function public.hybrid_search(text,vector,text,integer,uuid) to service_role;
+
+
+-- Keep the category listing with the snapshot so a rollback uses its original source.
+alter table public.rag_categories add column if not exists listing_url text;
+
+-- Upload reviewed inventory and coverage together. Replaying a finished staged batch is safe.
+create or replace function public.replace_staged_inventory(candidate uuid, products jsonb, categories jsonb)
+returns void language plpgsql security invoker set search_path = public as $$
+begin
+  lock table public.rag_active_version in share mode;
+  perform pg_advisory_xact_lock(hashtextextended(candidate::text, 0));
+  if exists(select 1 from public.rag_active_version where version_id=candidate)
+    or not exists(select 1 from public.rag_chunks where version_id=candidate) then
+    raise exception 'Expected an existing staged version';
+  end if;
+  if jsonb_array_length(products)=0 or jsonb_array_length(categories)=0 then
+    raise exception 'Expected a reviewed inventory';
+  end if;
+  if exists(select 1 from jsonb_to_recordset(products) as p(source_url text)
+    where not exists(select 1 from public.rag_chunks c where c.version_id=candidate and c.source_url=p.source_url)) then
+    raise exception 'Inventory source missing from staged chunks';
+  end if;
+  delete from public.rag_products where version_id=candidate;
+  delete from public.rag_categories where version_id=candidate;
+  insert into public.rag_products(version_id,name,category,status,source_url,verified)
+    select candidate,p.name,p.category,p.status,p.source_url,p.verified from jsonb_to_recordset(products)
+      as p(name text, category text, status text, source_url text, verified boolean);
+  insert into public.rag_categories(version_id,category,reconciled,listing_url)
+    select candidate,c.category,c.reconciled,c.listing_url from jsonb_to_recordset(categories)
+      as c(category text, reconciled boolean, listing_url text);
+end $$;
+revoke all on function public.replace_staged_inventory(uuid,jsonb,jsonb) from public,anon,authenticated;
+grant execute on function public.replace_staged_inventory(uuid,jsonb,jsonb) to service_role;

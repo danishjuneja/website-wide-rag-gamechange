@@ -1,6 +1,6 @@
 # Website RAG chatbot — technical draft
 
-> Draft: crawl coverage, product inventory, source accuracy and live provider behavior have not yet been verified. Complete this document with measured outcomes before submission.
+> The current six-page report is submission/website-rag-technical.pdf. The register has 352 offerings across 35 categories, with 34 reconciled and fund completeness unverified. GPT-OSS 20B is the default. The final fifteen-question evaluation passed thirteen cases, with one partial answer and one failure. See submission/final-evaluation.md.
 
 ## Assumptions and scope
 

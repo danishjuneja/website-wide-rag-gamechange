@@ -42,12 +42,6 @@ export function validateAnswer(input: unknown, allowed: string[]): Answer | null
   if (issue) return null;
   return {answer:item.answer, citations:item.citations};
 }
-export function rankFusion(lexical: string[], vector: string[]): {id:string; score:number}[] {
-  const scores = new Map<string, number>();
-  for (const list of [lexical,vector]) for (const [i,id] of [...new Set(list)].entries()) scores.set(id,(scores.get(id) ?? 0) + 1/(60+i+1));
-  return [...scores].map(([id,score]) => ({id,score})).sort((a,b) => b.score-a.score);
-}
-
 type ContextChunk = { id: number; source_url: string; content: string };
 const contextStopwords = new Set('what which how is are the a an for of to in on that this those these it its card cards account accounts loan loans product products and or does do i my me please tell about'.split(' '));
 function contextTerms(text:string):string[] {

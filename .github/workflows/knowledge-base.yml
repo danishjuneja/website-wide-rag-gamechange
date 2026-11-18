@@ -1,0 +1,93 @@
+name: Knowledge base
+on:
+  workflow_dispatch:
+    inputs:
+      phase:
+        description: Prepare a crawl, or stage an approved artifact
+        type: choice
+        options: [prepare, stage]
+        default: prepare
+        required: true
+      source_run:
+        description: Successful prepare run ID (stage only)
+        type: string
+      batch_id:
+        description: Approved 64-character fingerprint from the estimate (stage only)
+        type: string
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: knowledge-base
+  cancel-in-progress: false
+jobs:
+  pipeline:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Validate approved source run
+        if: inputs.phase == 'stage'
+        uses: actions/github-script@v7
+        env:
+          SOURCE_RUN: ${{ inputs.source_run }}
+          BATCH_ID: ${{ inputs.batch_id }}
+        with:
+          script: |
+            if (!/^\d+$/.test(process.env.SOURCE_RUN) || !/^[a-f0-9]{64}$/.test(process.env.BATCH_ID)) {
+              throw new Error('Supply the prepare run ID and its approved fingerprint');
+            }
+            const {data: run} = await github.rest.actions.getWorkflowRun({
+              ...context.repo, run_id: Number(process.env.SOURCE_RUN)
+            });
+            if (run.conclusion !== 'success' || run.event !== 'workflow_dispatch' ||
+                run.head_sha !== context.sha || run.path !== '.github/workflows/knowledge-base.yml') {
+              throw new Error('Use a successful prepare artifact from this exact commit and workflow');
+            }
+            const {data: {artifacts}} = await github.rest.actions.listWorkflowRunArtifacts({
+              ...context.repo, run_id: run.id
+            });
+            if (!artifacts.some(a => a.name === 'crawl-estimate' && !a.expired)) {
+              throw new Error('The selected run has no retained crawl estimate');
+            }
+      - name: Restore frozen crawl
+        if: inputs.phase == 'stage'
+        uses: actions/download-artifact@v4
+        with:
+          name: crawl-estimate
+          path: data
+          run-id: ${{ inputs.source_run }}
+          github-token: ${{ github.token }}
+      - name: Prepare snapshot and estimate
+        if: inputs.phase == 'prepare'
+        run: npm run build:kb -- pipeline/sitemap-en.xml --estimate-only
+      - name: Save estimate
+        if: inputs.phase == 'prepare'
+        uses: actions/upload-artifact@v4
+        with:
+          name: crawl-estimate
+          path: data/
+          retention-days: 7
+          if-no-files-found: error
+      - name: Index approved batch
+        if: inputs.phase == 'stage'
+        env:
+          APPROVED_BATCH: ${{ inputs.batch_id }}
+          COHERE_API_KEY: ${{ secrets.COHERE_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: npm run build:kb -- pipeline/sitemap-en.xml "--batch-id=$APPROVED_BATCH"
+      - name: Save staged result or failure checkpoint
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-result-${{ github.run_id }}
+          path: data/
+          retention-days: 7
+          if-no-files-found: ignore

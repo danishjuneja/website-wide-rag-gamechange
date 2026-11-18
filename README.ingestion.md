@@ -1,6 +1,6 @@
 # Website RAG chatbot
 
-An in-progress TypeScript/Next.js banking-information demo. The chatbot searches a prebuilt snapshot of public website content; it does not crawl during chat. Product coverage and answer quality are not yet verified. Do not present this as a completed assignment.
+An in-progress TypeScript/Next.js banking-information demo. The chatbot searches a prebuilt snapshot of public website content; it does not crawl during chat. The reviewed register contains 352 offerings across 35 categories. Fund completeness remains unverified. The final fifteen-question evaluation passed thirteen cases, with one partial answer and one failure.
 
 ## Setup
 
@@ -14,9 +14,9 @@ Requires Node 24+, a Supabase project with pgvector, Cohere and Groq API keys. C
 4. `npm run pdf:review -- data/crawl.json 10` discovers linked PDFs on supported bank domains and writes unverified page text to `data/pdf-review.json`. Check tables and extracted values against the original. PDF content is not automatically indexed.
    Add checked excerpts to `data/verified-pdf.json` using the format described in `data.example/README.md`; only records marked verified are considered for indexing.
 5. `npm run index:estimate` prints the provider, text volume and estimated request count without model calls. After the user approves the batch, run `npm run index:estimate -- data/crawl.json --approve-api --batch-id=<batchId>` to stage an index version. Replace `<batchId>` with the fingerprint from the approved estimate. This excludes tables, calls Cohere and writes to Supabase.
-6. `npm run inventory:upload -- path/to/reviewed-inventory.json <staged-version-uuid>` uploads verified product records. After coverage and the 15-question evaluation pass, update `supabase/promote.sql` with the staged UUID and execute it to make that version active.
+6. `npm run inventory:upload -- path/to/reviewed-inventory.json <staged-version-uuid>` atomically replaces the reviewed inventory of a staged version. Apply the current schema first. After coverage and the 15-question evaluation pass, update `supabase/promote.sql` with the staged UUID and execute it to make that version active.
 
-The current tooling does not yet prove coverage across every product or handle all document formats. Crawled pages need review. The discovery classifier supports a limited set of categories and asks for clarification on broader lists. Completion requires a full crawl, PDF and inventory review, model-backed evaluation, submission document, video and deployment.
+The current tooling does not yet prove coverage across every product or handle all document formats. Crawled pages need review. Discovery supports the registered categories and asks for clarification on broader lists. Completion requires a full crawl, PDF and inventory review, model-backed evaluation, submission document, video and deployment.
 
 ## Privacy and operation
 

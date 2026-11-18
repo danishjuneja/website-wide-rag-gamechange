@@ -47,7 +47,3 @@ export async function verifyAnswerWithFeedback(question:string, draft:Draft, pas
     return fail('unsupported_or_incomplete');
   } catch { return fail('verifier_error'); }
 }
-
-export async function verifyAnswer(question:string,draft:Draft,passages:Passage[],generate:Generator):Promise<boolean> {
-  return (await verifyAnswerWithFeedback(question,draft,passages,generate)).verified;
-}

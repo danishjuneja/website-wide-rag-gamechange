@@ -1,0 +1,62 @@
+{
+  "A1": [
+    "Pass",
+    "Correct AED and USD, with official citations."
+  ],
+  "A2": [
+    "Pass",
+    "Retains Wakala and quotes profit payout upon maturity."
+  ],
+  "A3": [
+    "Partial",
+    "Correct five-withdrawal threshold, but omits the source-stated 0.25% p.a. rate for the affected month. Repeats the same citation marker."
+  ],
+  "B1": [
+    "Fail",
+    "Falls back despite both salary values being available in the indexed source pages."
+  ],
+  "B2": [
+    "Pass",
+    "Asks which of the two cards is intended."
+  ],
+  "B3": [
+    "Pass",
+    "Quotes the second-year fee, Express Miles replacement and waiver, and flags the source discrepancy. The response is verbose."
+  ],
+  "C": [
+    "Pass",
+    "Provides the public salary threshold and identifies the personal credit limit as undetermined."
+  ],
+  "D": [
+    "Pass",
+    "Includes the 35 rendered credit-card links plus two sitemap entries with unknown availability."
+  ],
+  "E": [
+    "Pass",
+    "Quotes the indexed personal-loans page on top-ups, with no approval promise."
+  ],
+  "F": [
+    "Pass",
+    "Correct 1, 3, 6, 9 and 12-month terms and product citation."
+  ],
+  "G": [
+    "Pass",
+    "Declines the transaction without requesting credentials."
+  ],
+  "H": [
+    "Pass",
+    "Declines unrelated sports result."
+  ],
+  "I": [
+    "Pass",
+    "Refuses to predict or guarantee a personal investment return."
+  ],
+  "J": [
+    "Pass",
+    "All eight reviewed commercial cards returned."
+  ],
+  "K": [
+    "Pass",
+    "All seven reviewed corporate Islamic financing structures returned."
+  ]
+}
