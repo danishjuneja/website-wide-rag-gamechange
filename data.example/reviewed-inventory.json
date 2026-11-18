@@ -1,0 +1,8 @@
+{
+  "products": [],
+  "categories": [
+    {"category":"credit cards","reconciled":false},
+    {"category":"savings accounts","reconciled":false},
+    {"category":"personal loans","reconciled":false}
+  ]
+}
