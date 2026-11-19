@@ -54,3 +54,10 @@ test('constructs the standalone subject when the rewrite separates it from the q
  assert.match(plan?.primary||'',/Cedar Deposit Account/);
  assert.equal(plan?.products[0]?.source_url,'https://bank.test/cedar');
 });
+
+
+test('excerpt identity hints do not require modifying the user query',()=>{
+ const passage={source_url:'https://bank.test/cedar',title:'Cedar Special Deposit Account',content:'Currencies: GBP and EUR'};
+ assert.ok(sourceExcerpts('Which currencies can I use?', [passage], 'Which currencies can I use?', [passage.source_url])?.answer.includes('GBP and EUR'));
+ assert.equal(sourceExcerpts('Which currencies can I use?', [passage], 'Which currencies can I use?', ['https://bank.test/unknown']),null);
+});

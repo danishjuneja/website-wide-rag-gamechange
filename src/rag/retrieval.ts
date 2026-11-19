@@ -6,8 +6,7 @@ export function passageText(passage:{title?:string;section?:string;content:strin
 const terms=(text:string):string[]=>text.toLowerCase().match(/[a-z0-9]+/g)||[];
 const stop=new Set('a an the is are how what which when where for of to in on and or me my more tell about please product products card cards account accounts loan loans'.split(' '));
 export function pageCandidates(question:string,products:{name:string;source_url:string}[],rows:Passage[]) {
-  const names=new Set(products.flatMap(p=>terms(p.name)));
-  const focus=[...new Set(terms(question).filter(t=>!stop.has(t)&&!names.has(t)))];
+  const focus=[...new Set(terms(question).filter(t=>!stop.has(t)))];
   const documents=rows.map(row=>({row,words:terms(row.content+' '+row.section)}));
   const average=documents.reduce((sum,d)=>sum+d.words.length,0)/Math.max(1,documents.length);
   const frequencies=new Map(focus.map(term=>[term,documents.filter(d=>d.words.includes(term)).length]));

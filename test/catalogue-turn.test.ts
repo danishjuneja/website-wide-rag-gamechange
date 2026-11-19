@@ -12,10 +12,11 @@ test('keeps the latest fact when resolving a pronoun and an explicit switch',()=
 test('resolves a named choice after comparison and keeps the two searches distinct',()=>{
  const q='Compare the salaries for North Signature and North Infinite credit cards.';
  const plan=catalogueTurn(history(q),items);assert.ok(plan && !plan.ambiguous);assert.equal(plan.queries.length,3);
- assert.doesNotMatch(plan.queries[1],/Infinite/);
+ assert.ok(plan.queries[1].startsWith('Product: North Signature'));
+ assert.ok(plan.queries.every(query=>query.includes(q)));
  assert.deepEqual(catalogueTurn(history(q,'What is its fee?'),items),{ambiguous:true});
  const resolved=catalogueTurn(history(q,'What is its fee?','The Infinite card. What is its fee?'),items);
- assert.ok(resolved && !resolved.ambiguous);assert.match(resolved.primary,/North Infinite/);
+ assert.ok(resolved && !resolved.ambiguous);assert.ok(resolved.products[0].name.startsWith('North Infinite'));
 });
 test('does not carry a previous subject into a fresh unrelated subject',()=>{
  assert.equal(catalogueTurn(history('Cedar Deposit?','Tell me about a mystery product.'),items),null);
@@ -47,4 +48,15 @@ test('comparison mentions are linked independently across unequal name lengths',
   const latter=catalogueTurn(history(question,'What is the fee for the latter?'),catalogue);
   assert.ok(latter && !latter.ambiguous);assert.equal(latter.products[0].source_url,catalogue[1].source_url);
  }
+});
+
+
+test('plural follow-ups retain the discussed set while singular references clarify',()=>{
+ const question='How do North Signature and North Infinite differ?';
+ for(const followup of ['What are their annual fees?','Compare them on eligibility','Which currencies do both support?']){
+  const plan=catalogueTurn(history(question,followup),items);
+  assert.ok(plan&&!plan.ambiguous);assert.equal(plan.products.length,2);
+  assert.ok(plan.primary.includes('North Signature'));assert.ok(plan.primary.includes('North Infinite'));
+ }
+ assert.deepEqual(catalogueTurn(history(question,'What is its annual fee?'),items),{ambiguous:true});
 });

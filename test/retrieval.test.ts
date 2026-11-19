@@ -34,3 +34,10 @@ test('support-page evidence retains adjacent qualifications without a product id
  const selected=selectEvidence([{index:0,relevance_score:0.9}],[rows[0]],[],12000,rows);
  assert.deepEqual(selected.map(row=>row.id),[1,2]);
 });
+
+
+test('a requested field remains searchable when it is also in the product name',()=>{
+ const product={name:'Salary Transfer Loan',source_url:'https://bank.test/salary-loan'};
+ const rows=Array.from({length:20},(_,id)=>({id,source_url:product.source_url,title:product.name,section:'Details',content:id===19?'Salary threshold: AED 5000.':'Visit a branch to learn more.'}));
+ assert.ok(pageCandidates('What is the salary for Salary Transfer Loan?',[product],rows).some(row=>row.id===19));
+});

@@ -5,12 +5,12 @@ const roots = (s:string) => words(s).split(' ').map(w=>/^(pay|paid|pays|paying|p
 const phrase = (text:string, label:string) => (' '+text+' ').includes(' '+label+' ');
 
 // Quote complete labelled paragraphs from one identifiable page. Never combine values across products.
-export function sourceExcerpts(question:string, evidence:Passage[], latestQuestion = question) {
+export function sourceExcerpts(question:string, evidence:Passage[], latestQuestion = question,productUrls:string[]=[]) {
   const query=words(question);
   const focus=words(latestQuestion);
   if (/\b(compare|versus|difference|cheaper|higher|lower|not|except|waived|without)\b/.test(focus) || /\b(compare|versus|difference)\b/.test(query)) return null;
-  const pages=new Set<string>();
-  for(const row of evidence){
+  const pages=new Set<string>(productUrls.length===1 && evidence.some(row=>row.source_url===productUrls[0])?productUrls:[]);
+  for(const row of pages.size?[]:evidence){
     const names=[row.title?.split('|')[0],row.section?.split(' > ')[0],new URL(row.source_url).pathname.split('/').filter(Boolean).at(-1)];
     if(names.some(name=>name && words(name).length>=3 && phrase(query,words(name)))) pages.add(row.source_url);
   }
