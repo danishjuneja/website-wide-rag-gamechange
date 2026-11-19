@@ -34,10 +34,27 @@ async function answerPublicQuestion(history: Message[]) {
   const active=previewVersion?{data:{version_id:previewVersion},error:null}:await db.from('rag_active_version').select('version_id').eq('singleton',true).maybeSingle();
   if(active.error) throw new Error('Index unavailable');
   if(!active.data) return fallback;
+  if(isDiscoveryRequest(question) && !discoveryCategory(question) && !isFilteredDiscovery(question)) {
+    const family=question.match(/\b(accounts|cards|loans)\b/i)?.[1].toLowerCase();
+    if(family) {
+      const coverage=await db.from('rag_categories').select('*').eq('version_id',active.data.version_id).order('category');
+      if(coverage.error) throw new Error('Catalogue unavailable');
+      const choices=(coverage.data || []).filter(row=>row.category.toLowerCase().endsWith(family));
+      const citations=[...new Set(choices.map(row=>row.listing_url || legacyListing(row.category)).filter((url):url is string=>typeof url==='string'))];
+      if(choices.length && citations.length) return {
+        answer:'You can explore these '+family.replace(/s$/,'')+' categories:\n'+choices.map(row=>{
+          const url=row.listing_url || legacyListing(row.category);
+          const marker=citations.indexOf(url);
+          return '• '+row.category+(marker>=0?' ['+(marker+1)+']':'');
+        }).join('\n')+'\nWhich category would you like to see?',
+        citations
+      };
+    }
+  }
   let products:{name:string;source_url:string}[]=[];
   let query=question;
   let queries=[question];
-  if (history.slice(0,-1).some(m=>m.role==='user') || /\b(compare|comparison|difference|versus|vs)\b/i.test(question)) {
+  if (!isDiscoveryRequest(question) && (history.slice(0,-1).some(m=>m.role==='user') || /\b(compare|comparison|difference|versus|vs)\b/i.test(question))) {
     const catalogue=await db.from('rag_products').select('name,source_url').eq('version_id',active.data.version_id).eq('verified',true);
     if(catalogue.error) throw new Error('Inventory unavailable');
     const resolved=catalogueTurn(history,catalogue.data || []);
