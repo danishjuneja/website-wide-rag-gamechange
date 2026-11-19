@@ -56,3 +56,9 @@ test('comparison routes qualified and source-marked values through verification'
    assert.equal(compareLabelledFacts(q,products,[{...rows[0],content},rows[1]]),null);
  }
 });
+
+test('general continuations resolve a single subject and clarify multiple subjects',()=>{
+ const plan=catalogueTurn(history('Tell me about Cedar Deposit','Tell me more'),items);
+ assert.ok(plan && !plan.ambiguous);assert.equal(plan.products[0].name,'Cedar Deposit Account');
+ assert.deepEqual(catalogueTurn(history('Compare North Infinite and North Signature','Tell me more'),items),{ambiguous:true});
+});

@@ -19,7 +19,8 @@ const categories: [string,RegExp][]=[['business accounts',/\bbusiness accounts?\
   ['investments', /\binvestments?\b/i],
 ];
 function requestedList(text: string): string | null {
-  const match = text.trim().match(/^(?:(?:please\s+)?(?:can|could|would) you\s+)?(?:please\s+)?(?:list|show(?: me)?|which|what(?: types? of| kinds? of)?|all)\s+(?:(?:me|the|your|all|available|our)\s+)*(.+)$/i);
+  const request=text.trim().replace(/^(?:please\s+)?(?:(?:how (?:can|do) i|i (?:want|would like) to)\s+(?:learn|know|find out)\s+(?:more\s+)?about|(?:can|could) you\s+(?:help me\s+)?(?:understand|explain)|(?:tell me|give me)\s+(?:(?:more|some)\s+)?(?:information|details)?\s*(?:about|on)|explain|describe|explore)\s+/i,'list ');
+  const match = request.match(/^(?:(?:please\s+)?(?:can|could|would) you\s+)?(?:please\s+)?(?:list|show(?: me)?|which|what(?: types? of| kinds? of)?|all)\s+(?:(?:me|the|your|all|available|our)\s+)*(.+)$/i);
   if (!match) return null;
   const subject = match[1];
   if (/^(?:is|are (?:the |my )?(?:fees?|benefits?|terms?)|does|do|can|will|fees?|annual fee|minimum|benefits?|requirements?|eligibility|terms?|interest|rate|limit|documents?)\b/i.test(subject)) return null;

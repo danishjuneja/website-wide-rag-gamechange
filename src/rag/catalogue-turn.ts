@@ -3,7 +3,7 @@ type CatalogueItem = {name:string; source_url:string};
 type HistoryMessage = {role:'user'|'assistant'; content:string};
 const tokens = (s:string): string[] => s.normalize('NFKC').toLowerCase().match(/[\p{L}\p{N}]+/gu) ?? [];
 const generic = new Set('the by for of with and in a an emirates nbd bank banking account accounts credit debit prepaid card cards visa mastercard loan loans deposit deposits fund funds investment investments product products uae'.split(' '));
-const referential = /\b(?:it|its|that one|this one|that product|the former|the latter)\b/i;
+const referential = /\b(?:it|its|that one|this one|that product|the former|the latter)|^\s*(?:please\s+)?(?:tell me more|more details|what (?:are|is) (?:the )?(?:benefits|annual fee|eligibility|minimum salary)|how (?:much|do I apply))\b\b/i;
 const comparison = /\b(?:compare|versus|vs|difference between)\b/i;
 
 export function catalogueTurn(history:HistoryMessage[], catalogue:CatalogueItem[]) {
