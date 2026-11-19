@@ -15,3 +15,9 @@ test('a continuation avoids passages already shown',()=>{
  const result=sourceOverview('Tell me more',product,rows,[rows[0].content]);
  assert.ok(result?.answer.includes(rows[1].content));assert.equal(result?.answer.includes(rows[0].content),false);
 });
+
+test('selecting an exact product name produces its source overview',()=>{
+ const product={name:'Cobalt Education Loan',source_url:'https://bank.test/cobalt'};
+ const rows=[{source_url:product.source_url,content:'Study with flexible repayment terms, subject to the published eligibility criteria.',section:'Cobalt Education Loan > Overview'}];
+ assert.ok(sourceOverview('Cobalt Education Loan',product,rows)?.citations.includes(product.source_url));
+});

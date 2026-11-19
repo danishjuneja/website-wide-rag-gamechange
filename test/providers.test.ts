@@ -16,3 +16,20 @@ test('reranker returns valid result indices',async()=>{
  globalThis.fetch=async()=>new Response(JSON.stringify({results:[{index:1},{index:0}]}));
  try{assert.deepEqual(await rerank('q',['a','b']),[1,0])}finally{globalThis.fetch=oldFetch;if(oldKey===undefined)delete process.env.COHERE_API_KEY;else process.env.COHERE_API_KEY=oldKey}
 });
+
+
+test('provider limits retain safe status and cooldown without exposing response content',async()=>{
+ const {ProviderError,providerResponse}=await import('../src/rag/provider-error.ts');
+ const oldFetch=globalThis.fetch,oldKey=process.env.COHERE_API_KEY;
+ process.env.COHERE_API_KEY='test-only';
+ globalThis.fetch=async()=>new Response(JSON.stringify({error:{code:'rate_limit_exceeded',message:'sensitive provider payload'}}),{status:429,headers:{'retry-after':'12'}});
+ try {
+   await assert.rejects(embed(['q'],'search_query'),error=>{
+     assert.ok(error instanceof ProviderError);
+     assert.equal(error.status,429);assert.equal(error.retryAfter,12);
+     assert.equal(providerResponse(error).status,429);
+     assert.equal(error.message.includes('sensitive'),false);
+     return true;
+   });
+ }finally{globalThis.fetch=oldFetch;if(oldKey===undefined)delete process.env.COHERE_API_KEY;else process.env.COHERE_API_KEY=oldKey;}
+});

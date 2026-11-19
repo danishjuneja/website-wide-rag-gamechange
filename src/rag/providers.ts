@@ -1,11 +1,19 @@
+import {ProviderError} from './provider-error.ts';
 import type { Message } from './core.ts';
 
 async function request(url: string, key: string, body: unknown) {
-  const response = await fetch(url, { method:'POST', headers:{'Authorization':`Bearer ${key}`,'Content-Type':'application/json'}, body:JSON.stringify(body), signal:AbortSignal.timeout(45000) });
+  const endpoint=new URL(url);
+  let response:Response;
+  try { response = await fetch(url, { method:'POST', headers:{'Authorization':`Bearer ${key}`,'Content-Type':'application/json'}, body:JSON.stringify(body), signal:AbortSignal.timeout(45000) }); } catch(error) {
+    throw new ProviderError(endpoint.hostname,error instanceof Error && /Timeout|Abort/.test(error.name)?504:502,undefined,undefined);
+  }
   if (!response.ok) {
-    const endpoint = new URL(url);
-    console.warn('Provider request failed', endpoint.hostname, endpoint.pathname, response.status);
-    throw new Error(`Upstream service failed (${response.status})`);
+    const retry=response.headers.get('retry-after');
+    const seconds=retry && /^\d+$/.test(retry)?Number(retry):retry?Math.max(1,Math.ceil((Date.parse(retry)-Date.now())/1000)):undefined;
+    const details=await response.json().catch(()=>null) as {error?:{code?:unknown}} | null;
+    const code=typeof details?.error?.code==='string' && /^[a-z0-9_-]{1,80}$/i.test(details.error.code)?details.error.code:undefined;
+    throw new ProviderError(endpoint.hostname,response.status,code,seconds && Number.isFinite(seconds)?Math.min(seconds,86400):undefined);
+
   }
   return response.json();
 }

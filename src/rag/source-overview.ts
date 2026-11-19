@@ -4,11 +4,12 @@ type Passage={source_url:string;content:string;section:string};
 // Quote complete introductory blocks from the resolved product page.
 export function sourceOverview(question:string,product:Product,passages:Passage[],previousAnswers:string[] = []) {
   const request=question.toLowerCase().replace(product.name.toLowerCase(),'').trim().replace(/[?.!]+$/,'');
-  if(!/^(?:(?:please )?(?:tell me (?:more )?about|tell me more|give me (?:an? )?(?:overview|summary) of|describe|more details(?: about)?))(?:\s|$)/i.test(request)) return null;
+  const bare=question.toLowerCase().replace(/[?.!]+$/,'').trim()===product.name.toLowerCase();
+  if(!bare && !/^(?:(?:please )?(?:tell me (?:more )?about|tell me more|give me (?:an? )?(?:overview|summary) of|describe|more details(?: about)?))(?:\s|$)/i.test(request)) return null;
   const words=(text:string)=>text.toLowerCase().match(/[a-z0-9]+/g)||[];
   const remainder=request.replace(/^(?:please )?(?:tell me (?:more )?about|tell me more|give me (?:an? )?(?:overview|summary) of|describe|more details(?: about)?)/i,'');
   const permitted=new Set([...words(product.name),'it','this','that','the','one','product']);
-  if(words(remainder).some(word=>!permitted.has(word))) return null;
+  if(!bare && words(remainder).some(word=>!permitted.has(word))) return null;
   const specifics=/\b(?:fees?|charges?|costs?|rates?|eligib\w*|salary|requirements?|documents?|compare|versus|without|except|waiv\w*|withdraw\w*|limits?)\b/i;
   if(specifics.test(request)) return null;
   const paragraphs=passages.filter(p=>p.source_url===product.source_url &&
