@@ -13,8 +13,8 @@ test('embedding sends query input type and validates vectors',async()=>{
 });
 test('reranker returns valid result indices',async()=>{
  const oldFetch=globalThis.fetch, oldKey=process.env.COHERE_API_KEY; process.env.COHERE_API_KEY='test-only';
- globalThis.fetch=async()=>new Response(JSON.stringify({results:[{index:1},{index:0}]}));
- try{assert.deepEqual(await rerank('q',['a','b']),[1,0])}finally{globalThis.fetch=oldFetch;if(oldKey===undefined)delete process.env.COHERE_API_KEY;else process.env.COHERE_API_KEY=oldKey}
+ globalThis.fetch=async()=>new Response(JSON.stringify({results:[{index:1,relevance_score:0.9},{index:0,relevance_score:0.6}]}));
+ try{assert.deepEqual((await rerank('q',['a','b'])).map(r=>r.index),[1,0])}finally{globalThis.fetch=oldFetch;if(oldKey===undefined)delete process.env.COHERE_API_KEY;else process.env.COHERE_API_KEY=oldKey}
 });
 
 

@@ -46,3 +46,11 @@ test('ranks a payout paragraph for a question about when a payment is made',()=>
  const row={source_url:'https://bank.test/cedar',title:'Cedar Deposit',content:'Profit payout upon maturity'};
  assert.match(sourceExcerpts('Cedar Deposit', [row], 'When is its profit paid?')?.answer||'',/Profit payout upon maturity/);
 });
+
+
+test('constructs the standalone subject when the rewrite separates it from the query',()=>{
+ const history=[{role:'user' as const,content:'Tell me about Cedar Deposit Account'},{role:'assistant' as const,content:'Cedar Deposit pays interest.'},{role:'user' as const,content:'When is interest paid?'}];
+ const plan=resolveTurn(history[2].content,history,{ambiguous:false,query:'When is interest paid?',subjects:['Cedar Deposit Account'],product_queries:[]},[{name:'Cedar Deposit Account',source_url:'https://bank.test/cedar'}]);
+ assert.match(plan?.primary||'',/Cedar Deposit Account/);
+ assert.equal(plan?.products[0]?.source_url,'https://bank.test/cedar');
+});

@@ -35,14 +35,14 @@ test('requires every condition to be accounted for exactly once',async()=>{
 });
 
 
-test('ignores a separate unrelated fact but rejects an omitted relevant waiver',async()=>{
+test('requires the extractor-selected conditions and rejects an omitted waiver',async()=>{
  const facts=[{source_url:source,content:'Joining fee: AED 50. Annual fee: AED 100 from the second year. The annual fee is waived for programme members.'}];
- const conditions={conditions:[{source_url:source,quote:'Joining fee: AED 50.'},{source_url:source,quote:'Annual fee: AED 100 from the second year.'},{source_url:source,quote:'The annual fee is waived for programme members.'}]};
+ const conditions={conditions:[{source_url:source,quote:'Annual fee: AED 100 from the second year.'},{source_url:source,quote:'The annual fee is waived for programme members.'}]};
  const draft={answer:'The annual fee is AED 100 from the second year. [1]',citations:[source]};
- const base={supported:true,complete:true,evidence:[{source_url:source,quote:facts[0].content}],conditions:[{index:0,relevant:false,covered:false,answer_quote:''},{index:1,relevant:true,covered:true,answer_quote:'from the second year'},{index:2,relevant:true,covered:false,answer_quote:''}]};
+ const base={supported:true,complete:true,evidence:[{source_url:source,quote:facts[0].content}],conditions:[{index:0,relevant:true,covered:true,answer_quote:'from the second year'},{index:1,relevant:true,covered:false,answer_quote:''}]};
  assert.equal((await verifyAnswerWithFeedback('annual fee?',draft,facts,pair(conditions,base))).verified,false);
  const full={answer:'The annual fee is AED 100 from the second year and is waived for programme members. [1]',citations:[source]};
- const report={...base,conditions:[base.conditions[0],base.conditions[1],{index:2,relevant:true,covered:true,answer_quote:'waived for programme members'}]};
+ const report={...base,conditions:[base.conditions[0],{index:1,relevant:true,covered:true,answer_quote:'waived for programme members'}]};
  assert.equal((await verifyAnswerWithFeedback('annual fee?',full,facts,pair(conditions,report))).verified,true);
  assert.equal((await verifyAnswerWithFeedback('annual fee?',full,facts,pair(conditions,{...report,conditions:[{index:0,covered:false},report.conditions[1],report.conditions[2]]}))).verified,false);
 });

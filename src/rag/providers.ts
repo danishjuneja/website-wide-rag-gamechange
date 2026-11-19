@@ -1,3 +1,4 @@
+import {renderStructuredAnswer} from './structured-answer.ts';
 import {ProviderError} from './provider-error.ts';
 import type { Message } from './core.ts';
 
@@ -25,29 +26,43 @@ export async function embed(texts: string[], inputType: 'search_document'|'searc
   if (!Array.isArray(vectors) || vectors.length !== texts.length || vectors.some((v:unknown)=>!Array.isArray(v) || v.length !== 1024 || v.some(n=>typeof n !== 'number' || !Number.isFinite(n)))) throw new Error('Invalid embedding response');
   return vectors;
 }
-export async function rerank(query: string, documents: string[]): Promise<number[]> {
+export async function rerank(query: string, documents: string[]): Promise<{index:number;relevance_score:number}[]> {
   const key=process.env.COHERE_API_KEY;
   if (!key) throw new Error('Reranking service is not configured');
-  const data=await request('https://api.cohere.com/v2/rerank',key,{model:process.env.COHERE_RERANK_MODEL || 'rerank-v3.5',query,documents,top_n:Math.min(8,documents.length)});
+  const data=await request('https://api.cohere.com/v2/rerank',key,{model:process.env.COHERE_RERANK_MODEL || 'rerank-v3.5',query,documents,top_n:documents.length});
   if (!Array.isArray(data.results)) throw new Error('Invalid reranking response');
-  return data.results.map((x:{index:number})=>x.index).filter((x:unknown)=>Number.isInteger(x) && Number(x)>=0 && Number(x)<documents.length);
+  const seen=new Set<number>();
+  return data.results.filter((item:{index:number;relevance_score:number})=>{
+    if(!Number.isInteger(item.index)||item.index<0||item.index>=documents.length||!Number.isFinite(item.relevance_score)||item.relevance_score<0||item.relevance_score>1||seen.has(item.index))return false;
+    seen.add(item.index);return true;
+  });
+
 }
-export async function generate(messages: Message[], system: string, shape?: string[] | 'turn'): Promise<string> {
+export type GenerationShape=string[]|'turn'|{kind:'conditions'|'judgment';passageIds:number[]};
+export async function generate(messages: Message[], system: string, shape?: GenerationShape): Promise<string> {
   const key=process.env.GROQ_API_KEY;
   if (!key) throw new Error('Generation service is not configured');
   const strings = { type: 'array', items: { type: 'string' } };
+  const record=(properties:Record<string,unknown>)=>({type:'object',properties,required:Object.keys(properties),additionalProperties:false});
+  const quote=typeof shape==='object' && !Array.isArray(shape)
+    ? record({passage_id:{type:'integer',enum:shape.passageIds},quote:{type:'string'}}) : null;
   const properties = shape === 'turn'
     ? { ambiguous: { type: 'boolean' }, query: { type: 'string' }, subjects: strings, product_queries: strings }
-    : { answer: { type: 'string' }, citations: { type: 'array', items: { type: 'string', enum: shape } } };
+    : Array.isArray(shape)
+    ? {statements:{type:'array',items:record({text:{type:'string'},source_ids:{type:'array',items:{type:'integer',enum:shape.map((_,index)=>index)}}})},unresolved:strings}
+    : shape?.kind==='conditions'
+    ? {conditions:{type:'array',items:quote}}
+    : {supported:{type:'boolean'},complete:{type:'boolean'},evidence:{type:'array',items:quote},
+       conditions:{type:'array',items:record({index:{type:'integer'},covered:{type:'boolean'},answer_quote:{type:'string'}})}};
   const responseFormat = shape ? {
     type: 'json_schema',
     json_schema: {
-      name: shape === 'turn' ? 'resolved_turn' : 'cited_answer',
+      name: shape === 'turn' ? 'resolved_turn' : Array.isArray(shape)?'cited_answer':shape.kind,
       strict: true,
       schema: { type: 'object', properties, required: Object.keys(properties), additionalProperties: false },
     },
   } : { type: 'json_object' };
   const data=await request('https://api.groq.com/openai/v1/chat/completions',key,{model:process.env.GROQ_MODEL || 'openai/gpt-oss-20b',temperature:0,messages:[{role:'system',content:system},...messages],response_format:responseFormat});
   if (typeof data.choices?.[0]?.message?.content !== 'string') throw new Error('Invalid generation response');
-  return data.choices[0].message.content;
+  return Array.isArray(shape)?renderStructuredAnswer(JSON.parse(data.choices[0].message.content),shape):data.choices[0].message.content;
 }

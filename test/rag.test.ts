@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import { strict as assert } from 'node:assert';
-import { selectRelatedContext, answerValidationIssue, validateAnswer, validateHistory, searchQueries } from '../src/rag/core.ts';
+import { answerValidationIssue, validateAnswer, validateHistory, searchQueries } from '../src/rag/core.ts';
 
 test('rejects generated answers with fabricated sources', () => {
   assert.equal(validateAnswer({answer:'A', citations:['https://evil.test']}, ['https://bank.test']), null);
@@ -25,12 +25,6 @@ test('reports validation failure categories without recording response content',
  assert.equal(answerValidationIssue({answer:'Fact [1]',citations:['https://bank.test']},['https://bank.test']),null);
 });
 
-test('adds matching context from selected sources and excludes unrelated sources and duplicates',()=>{
- const selected=[{id:1,source_url:'https://bank.test/a',content:'Annual fees: 100'}];
- const candidates=[selected[0],{id:2,source_url:'https://bank.test/a',content:'Annual fee: 100 from the second year'},{id:3,source_url:'https://bank.test/other',content:'Annual fee: 200 from the second year'},{id:4,source_url:'https://bank.test/a',content:'Airport lounge access'}];
- assert.deepEqual(selectRelatedContext('What is the annual fee for that card?',selected,candidates).map(x=>x.id),[2]);
- assert.deepEqual(selectRelatedContext('How much is it?',selected,candidates),[]);
-});
 
 test('deduplicates permitted citations while preserving marker references',()=>{
  const allowed=['https://bank.test/a','https://bank.test/b'];

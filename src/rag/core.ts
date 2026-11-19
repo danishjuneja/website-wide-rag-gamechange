@@ -42,20 +42,3 @@ export function validateAnswer(input: unknown, allowed: string[]): Answer | null
   if (issue) return null;
   return {answer:item.answer, citations:item.citations};
 }
-type ContextChunk = { id: number; source_url: string; content: string };
-const contextStopwords = new Set('what which how is are the a an for of to in on that this those these it its card cards account accounts loan loans product products and or does do i my me please tell about'.split(' '));
-function contextTerms(text:string):string[] {
-  return [...new Set((text.toLowerCase().match(/[a-z]+/g)||[]).map(w=>w.length>4 && w.endsWith('s') ? w.slice(0,-1) : w).filter(w=>w.length>2 && !contextStopwords.has(w)))];
-}
-export function selectRelatedContext<T extends ContextChunk>(question:string, selected:T[], candidates:T[]):T[] {
-  const terms=contextTerms(question);
-  if (terms.length < 2) return [];
-  const sources=[...new Set(selected.map(x=>x.source_url))].slice(0,3);
-  const seen=new Set(selected.map(x=>x.id));
-  const scores=candidates.filter(x=>sources.includes(x.source_url) && !seen.has(x.id)).map(x=>{
-    const words=new Set(contextTerms(x.content));
-    return {chunk:x,score:terms.filter(t=>words.has(t)).length};
-  }).filter(x=>x.score>=2).sort((a,b)=>b.score-a.score || a.chunk.id-b.chunk.id);
-  const counts=new Map<string,number>();
-  return scores.filter(({chunk})=>{const count=counts.get(chunk.source_url)||0;if(count>=2)return false;counts.set(chunk.source_url,count+1);return true;}).slice(0,6).map(x=>x.chunk);
-}
