@@ -1,3 +1,4 @@
+import {EXTRACTOR_VERSION} from './version.ts';
 import { readFile,writeFile } from 'node:fs/promises';
 import { randomUUID,createHash } from 'node:crypto';
 import { createClient } from '@supabase/supabase-js';
@@ -12,7 +13,7 @@ const approved=process.argv.includes('--approve-api');
 const file=JSON.parse(await readFile(path,'utf8')) as {pages:Page[]};
 let reviewBlocks=0,excludedTables=0;
 type Row={source_url:string;title:string;section:string;content:string;fetched_at?:string;source_last_modified?:string};
-const rows:Row[]=file.pages.filter(p=>p.status==='extracted-unverified' && p.extractorVersion===3).flatMap(p=>{const safeBlocks=(p.blocks||[]).filter(b=>!b.heading.some(h=>/\b(testimonials?|customer (reviews?|stories)|what (our )?customers? (are )?saying)\b/i.test(h)));const result=chunkBlocks(safeBlocks);reviewBlocks+=result.review.length;excludedTables+=safeBlocks.filter(b=>b.kind==='table').length;return result.chunks.filter(c=>c.kind!=='table').map(c=>({source_url:p.canonicalUrl||p.url,title:p.title||p.url,section:c.heading.join(' > '),content:c.text,fetched_at:p.fetchedAt,source_last_modified:p.lastModified}))});
+const rows:Row[]=file.pages.filter(p=>p.status==='extracted-unverified' && p.extractorVersion===EXTRACTOR_VERSION).flatMap(p=>{const safeBlocks=(p.blocks||[]).filter(b=>!b.heading.some(h=>/\b(testimonials?|customer (reviews?|stories)|what (our )?customers? (are )?saying)\b/i.test(h)));const result=chunkBlocks(safeBlocks);reviewBlocks+=result.review.length;excludedTables+=safeBlocks.filter(b=>b.kind==='table').length;return result.chunks.filter(c=>c.kind!=='table').map(c=>({source_url:p.canonicalUrl||p.url,title:p.title||p.url,section:c.heading.join(' > '),content:c.text,fetched_at:p.fetchedAt,source_last_modified:p.lastModified}))});
 try {
  const reviewed=JSON.parse(await readFile('data/verified-pdf.json','utf8')) as {documents:{url:string;title:string;page:number;section:string;text:string;verified:boolean}[]};
  for(const doc of reviewed.documents){

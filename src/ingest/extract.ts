@@ -4,6 +4,7 @@ import { removeEmails } from './privacy.ts';
 
 export function extractPage(html: string, url: string): { title: string; blocks: Block[]; links: string[] } {
   const $ = cheerio.load(html);
+  $('[class*="calculator" i],[id*="calculator" i],[data-calculator]').remove();
   $('script,style,nav,header,footer,form,noscript,iframe,blockquote,[role=navigation],[aria-hidden=true],[class*="testimonial" i],[id*="testimonial" i],.site_header,.footer-main,.footer-segments').remove();
   const root = $('main').first().length ? $('main').first() : $('[role=main]').first().length ? $('[role=main]').first() : $('body');
   const title = removeEmails($('title').first().text().replace(/\s+/g, ' ').trim());
@@ -34,7 +35,9 @@ export function extractPage(html: string, url: string): { title: string; blocks:
       return;
     }
     const text = clean(cheerio.load((node.html()||'').replace(/<br\s*\/?\s*>/gi,' ')).text());
-    if (text) blocks.push({ heading: heading.filter(Boolean), text, kind: tag === 'li' ? 'list' : 'paragraph' });
+    const section=node.closest('section,article,[role=region],.rich-editor');
+    const hasUnverifiedTable=section.length>0 && section.find('table').length>0;
+    if (text) blocks.push({ heading: heading.filter(Boolean), text, kind: hasUnverifiedTable ? 'table' : tag === 'li' ? 'list' : 'paragraph' });
   });
   const links = new Set<string>();
   root.find('a[href]').each((_, element) => {

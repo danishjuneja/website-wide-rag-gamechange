@@ -1,3 +1,4 @@
+import {EXTRACTOR_VERSION} from './version.ts';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import robotsParser from 'robots-parser';
 import { parseSitemap } from './sitemap.ts';
@@ -49,7 +50,7 @@ for (const entry of selected.slice(report.length)) {
       report.push({...entry,status:'audit-links-only',fetchedAt:new Date().toISOString(),links:[...new Set(links)]});
     } else {
       const chunked = chunkBlocks(extracted.blocks);
-      report.push({ ...entry, canonicalUrl:current, extractorVersion:3, status: chunked.chunks.length ? 'extracted-unverified' : 'empty', fetchedAt: new Date().toISOString(), ...extracted, ...chunked });
+      report.push({ ...entry, canonicalUrl:current, extractorVersion:EXTRACTOR_VERSION, status: chunked.chunks.length ? 'extracted-unverified' : 'empty', fetchedAt: new Date().toISOString(), ...extracted, ...chunked });
     }
   } catch (error) { report.push({ ...entry, status: 'error', error: error instanceof Error ? error.message : 'Unknown error' }); }
   finally { if(report.length%20===0 || report.length===selected.length) { await writeFile('data/crawl.json', JSON.stringify({ generatedAt: new Date().toISOString(), totalSitemapUrls: entries.length, selected: selected.length, pages: report }, null, 2)); console.log(`Processed ${report.length}/${selected.length}`); } await new Promise(resolve => setTimeout(resolve, 1000)); }

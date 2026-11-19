@@ -64,3 +64,12 @@ test('preserves text separation at line breaks in paragraphs',()=>{
  const result=extractPage('<main><h1>Card</h1><p>Joining fee: 100<br>Annual fee: 50</p></main>','https://www.emiratesnbd.com/en/card');
  assert.equal(result.blocks[0].text,'Joining fee: 100 Annual fee: 50');
 });
+
+
+test('table-dependent prose stays quarantined and calculator defaults are excluded',()=>{
+ const html='<main><section class="rich-editor"><h2>Example</h2><p>Here is an example.</p><table><tr><td>100</td></tr></table><p>You save 70 per month.</p></section><section><h2>Features</h2><p>One payment covers existing debts.</p></section><div class="loan-calculator"><p>Estimated monthly payment 55</p></div></main>';
+ const page=extractPage(html,'https://bank.test/loan');
+ assert.equal(page.blocks.some(b=>b.text.includes('Estimated monthly')),false);
+ assert.equal(page.blocks.find(b=>b.text.includes('You save'))?.kind,'table');
+ assert.equal(page.blocks.find(b=>b.text.includes('One payment'))?.kind,'paragraph');
+});
