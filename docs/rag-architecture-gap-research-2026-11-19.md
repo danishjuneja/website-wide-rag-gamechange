@@ -1,0 +1,29 @@
+# Conversational website RAG: architecture and observed gaps
+
+Research date: 19 November 2026. Scope: repository inspection at b26cbfa and saved evaluation artifacts; no live provider calls or database reads/writes. Documentation records are historical evidence, not a fresh production acceptance run.
+
+## What a robust pipeline does
+
+1. **Prepare evidence before embedding.** Discover canonical pages, reconcile catalogue coverage, retain source snapshots and freshness, extract document structure, and keep table headers, units and qualifications together. Chunking should follow document structure and be experimentally evaluated; overly small chunks lose context and overly large chunks add noise. [Microsoft chunking guidance](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/rag/rag-chunking-phase).
+2. **Make chunks identifiable and filterable.** Store source identity, section, provenance and relevant entities/categories. Metadata supports exact constraints that semantic similarity alone handles poorly. [Microsoft enrichment guidance](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/rag/rag-enrichment-phase).
+3. **Resolve conversational references without changing the question.** Carry the referenced subjects and current requested facts into retrieval. QReCC treats rewriting, passage retrieval and reading comprehension as separately evaluable tasks over 54 million passages; conversational context is a distinct problem from vector-store capacity. [QReCC paper](https://aclanthology.org/2021.naacl-main.44/).
+4. **Retrieve broadly, then select evidence.** Combine keyword and semantic candidates, rerank, and recover surrounding context. Retrieval targets recall; reranking improves precision within those candidates. It cannot recover an absent fact. [Microsoft retrieval guidance](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/rag/rag-information-retrieval). Calibrate score cutoffs on representative domain examples; Cohere's v3.5 scores are query dependent. [Cohere best practices](https://docs.cohere.com/docs/reranking-best-practices).
+5. **Evaluate the stages and answer separately.** Measure source retrieval, groundedness and completeness; a supported answer can still omit a material exception. Record configuration and aggregate representative results. [Microsoft evaluation guidance](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/rag/rag-llm-evaluation-phase).
+
+## What this repository already has
+
+[Hybrid SQL](../supabase/schema.sql) combines English full-text and cosine-vector top-50 candidates with reciprocal rank fusion, returning up to 30 per query. [Chat orchestration](../src/rag/chat.ts) adds product-page candidates, Cohere reranking, source-context loading and a shared evidence budget. [Evidence selection](../src/rag/retrieval.ts) preserves named-source coverage and nearby section context. Structured statements, citation membership, source quotations, independent condition extraction and one repair pass already exist.
+
+The saved [catalogue reconciliation](submission/category-reconciliation.md) reports 8,602 vectors. This is modest relative to published conversational retrieval corpora and does not establish a scale bottleneck. The checked-in schema has no approximate vector index; pgvector defaults to exact nearest-neighbour search, so adding HNSW is a latency trade-off, not an automatic semantic-quality repair. Exact neighbour recall is different from retrieving the evidence needed to answer a question. [pgvector documentation](https://github.com/pgvector/pgvector#exact-search).
+
+## Observed failures versus remaining hypotheses
+
+- **Observed routing defect, corrected in deployed revision b26cbfa:** shared product-name context could select Home Loans before retrieval. [Routing report](conversation-routing-2026-11-19.md) records 16/56 to 56/56 intended product sets after b26cbfa, with mocked pipeline coverage. That demonstrates routing improvement, not live answer accuracy.
+- **Observed historical incompleteness:** [frozen evaluation](submission/final-evaluation.md) contains an accepted answer missing the affected-month 0.25% rate and a failed two-card salary comparison despite available sources. Its 13/15 passes belong to an older revision.
+- **Corpus/code mismatch:** [release record](retrieval-release-2026-11-19.md) says extractor v4 excludes calculator defaults and quarantines table-dependent prose, but code deployment did not rebuild/promote the index. New extraction safeguards cannot repair old embeddings in place. Current live corpus contents were not rechecked here.
+- **Call-budget pressure:** current successful generative path uses draft + condition extraction + judgment: three Groq calls. Full repair and re-verification can raise this to six, plus an optional conversational planner. Provider failures and rate limits are recorded in the release report. This is distinct from retrieval relevance.
+- **Unmeasured retrieval quality:** inspected tests use synthetic passages and mocked rerank scores; no labelled gold-chunk Recall@k/MRR benchmark or domain-calibrated relevance cutoff was found. Selection currently accepts positive rerank scores. Candidate truncation and context-budget loss are plausible causes requiring measurements, not established diagnoses.
+- **Incomplete evidence modelling:** chunks retain URL/title/section/hash/fetch metadata but lack explicit parent IDs, block order/type, applicability dates and condition relationships. Source neighbours use database ID order. These are improvement candidates, not proof that all failures need a schema redesign.
+
+Priority: review and stage the v4 corpus; audit tables and coverage; create labelled conversational retrieval/condition cases; measure each stage and call budget; then tune candidate counts, thresholds and context assembly. Promote and claim acceptance only after current-revision evaluation.
+
